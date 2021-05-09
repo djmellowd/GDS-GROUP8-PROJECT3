@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Main")]
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private float jumpHeight = 3;
     [SerializeField] private float speed = 12;
+    [SerializeField] private float runningSpeed = 24;
     [SerializeField] private float gravity = -9.81f;
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
@@ -19,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     {
         FallCheck();
         MainMovement();
+        Jump();
+        Crouch();
     }
     private void FallCheck()
     {
@@ -28,13 +32,40 @@ public class PlayerMovement : MonoBehaviour
             _velocity.y = -2f;
         }
     }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && _isGrounded)
+        {
+            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+    }
+    private void Crouch()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            characterController.height = 1;
+        }
+        else
+        {
+            characterController.height = 2;
+        }
+    }
     private void MainMovement()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
-        characterController.Move(move * speed* Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            characterController.Move(move * runningSpeed* Time.deltaTime);     
+        }
+        else
+        {
+            characterController.Move(move * speed* Time.deltaTime);     
+        }
         _velocity.y += gravity * Time.deltaTime;
         characterController.Move(_velocity * Time.deltaTime); 
     }
+    
 }

@@ -26,7 +26,7 @@ public class FirstPersonMovement : MonoBehaviour
 
         _xRotation -= mouseY;
         _xRotation = Mathf.Clamp(_xRotation, -90, 90);
-       // transform.localRotation = Quaternion.Euler(_xRotation,0f,0f);
+        transform.localRotation = Quaternion.Euler(_xRotation,0f,0f);
         playerBody.Rotate(Vector3.up * mouseX);
     }
 }
