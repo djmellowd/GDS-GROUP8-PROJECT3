@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Main")]
-    [SerializeField] private CharacterController characterController;
     [SerializeField] private float jumpHeight = 3;
     [SerializeField] private float speed = 12;
     [SerializeField] private float runningSpeed = 24;
@@ -15,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
     
+    [Header("To fill")]
+    [SerializeField] private CharacterController characterController;
+
     private Vector3 _velocity;
     private bool _isGrounded;
     void Update()
