@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using BehaviorDesigner.Runtime.Tactical;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Main")]
-    [SerializeField] private float jumpHeight = 3;
-    [SerializeField] private float speed = 12;
-    [SerializeField] private float runningSpeed = 24;
-    [SerializeField] private float gravity = -9.81f;
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.4f;
@@ -16,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("To fill")]
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private BasicData basicData;
 
     private Vector3 _velocity;
     private bool _isGrounded;
@@ -35,11 +33,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Die()
+    {
+        SceneManager.LoadScene(0);
+    }
     private void Jump()
     {
         if (Input.GetButtonDown("Jump") && _isGrounded)
         {
-            _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _velocity.y = Mathf.Sqrt(basicData.jumpHeight * -2f * basicData.gravity);
         }
     }
     private void Crouch()
@@ -60,14 +62,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            characterController.Move(move * runningSpeed* Time.deltaTime);     
+            characterController.Move(move * basicData.runningSpeed* Time.deltaTime);     
         }
         else
         {
-            characterController.Move(move * speed* Time.deltaTime);     
+            characterController.Move(move * basicData.speed* Time.deltaTime);     
         }
-        _velocity.y += gravity * Time.deltaTime;
+        _velocity.y += basicData.gravity * Time.deltaTime;
         characterController.Move(_velocity * Time.deltaTime); 
     }
-    
 }

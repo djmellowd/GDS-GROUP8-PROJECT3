@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using BehaviorDesigner.Runtime.Tactical;
 using UnityEngine;
 
 public class PlayerGun : MonoBehaviour
 {
-    [Header("Basic Parameters")]
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private float range = 100f;
+    [Header("Basic Parameters")] 
+    [SerializeField] private PlayerBullet playerBullet;
     
     [Header("Objects")]
     [SerializeField] private Camera camera;
@@ -26,12 +26,13 @@ public class PlayerGun : MonoBehaviour
         muzzleFlash.Play();
         
         RaycastHit hitInfo;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, range))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, playerBullet.range))
         {
-          Target target = hitInfo.transform.GetComponent<Target>();
+            Debug.Log(hitInfo.collider.name);
+          Health target = hitInfo.transform.GetComponent<Health>();
           if (target != null)
           {
-             target.TakeDamage(damage); 
+             target.Damage(playerBullet.damage); 
           }
         }
         
