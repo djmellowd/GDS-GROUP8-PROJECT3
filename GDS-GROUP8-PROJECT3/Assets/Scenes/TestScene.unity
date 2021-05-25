@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 118524167}
   - component: {fileID: 118524168}
+  - component: {fileID: 118524169}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -152,6 +153,7 @@ Transform:
   - {fileID: 383412565}
   - {fileID: 203991376}
   - {fileID: 1947552353}
+  - {fileID: 1734230243}
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118524166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5b33d2ec792d574e992d70e890382f0, type: 3}
   m_Name: 
@@ -170,6 +172,24 @@ MonoBehaviour:
   playerBullet: {fileID: 11400000, guid: f1ebf3af52e79874392c81ab34d42066, type: 2}
   camera: {fileID: 963194227}
   muzzleFlash: {fileID: 1947552352}
+--- !u!114 &118524169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118524166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a608c3cf3fef7804da5c0769133c8baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrel: {fileID: 1734230243}
+  playerBullet: {fileID: 11400000, guid: f1ebf3af52e79874392c81ab34d42066, type: 2}
+  cam: {fileID: 963194227}
+  parentAmmo: {fileID: 1293189493}
+  ammoPreFab: {fileID: 5185389433288235527, guid: 6c9f2f792bd1855478de49ae2daad0a2,
+    type: 3}
 --- !u!1 &129012876
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +239,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 129012876}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -231,7 +251,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129012876}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -673,7 +693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33340
+  m_Name: pb_Mesh16212
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1714,7 +1734,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33426
+  m_Name: pb_Mesh16306
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2978,7 +2998,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33638
+  m_Name: pb_Mesh16506
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4536,7 +4556,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33678
+  m_Name: pb_Mesh16540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4991,6 +5011,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255117213}
   m_Mesh: {fileID: 4300000, guid: 12968784543d4ad409f2f68f38e5b8b4, type: 3}
+--- !u!1 &1293189492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1293189493}
+  m_Layer: 0
+  m_Name: AmmoParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1293189493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293189492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.843742, y: 2.1759841, z: -18.31954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360825179
 GameObject:
   m_ObjectHideFlags: 0
@@ -5152,7 +5202,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467050189}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5198,7 +5248,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33364
+  m_Name: pb_Mesh16236
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5361,7 +5411,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33464
+  m_Name: pb_Mesh16348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5623,7 +5673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33512
+  m_Name: pb_Mesh16394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8024,6 +8074,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715843281}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1734230242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734230243}
+  m_Layer: 0
+  m_Name: Barrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734230243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734230242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.132, z: 0.525}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 118524167}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1879205006
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using BehaviorDesigner.Runtime.Tactical;
 using UnityEngine;
 
-public class PlayerGun : MonoBehaviour
+public class PlayerGunRaycast : MonoBehaviour
 {
     [Header("Basic Parameters")] 
     [SerializeField] private PlayerBullet playerBullet;
@@ -26,7 +26,7 @@ public class PlayerGun : MonoBehaviour
         muzzleFlash.Play();
         
         RaycastHit hitInfo;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, playerBullet.range))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hitInfo, 100))
         {
             Debug.Log(hitInfo.collider.name);
           Health target = hitInfo.transform.GetComponent<Health>();
