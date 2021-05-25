@@ -7,6 +7,7 @@ public class PlayerBullet : ScriptableObject
    [Header("Gun")]
    public float damage;
    public int limitAmmo;
+   public float overheatingTime=4;
    [Header("Bullet")]
    public float timeToDestory=1;
    public float bulletSpeed;
