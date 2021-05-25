@@ -16,7 +16,7 @@ public class PlayerBulletInGame : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         var enemy = other.gameObject.GetComponent<Health>();
-        if (enemy!=null)
+        if (enemy!=null && other.gameObject.tag!="Player")
         {
             enemy.Damage(playerBullet.damage);
         }
