@@ -8,19 +8,16 @@ namespace BehaviorDesigner.Runtime.Tactical
     public class Health : MonoBehaviour, IDamageable
     {
         // The amount of health to begin with
-        [Header("Ogolne")]
-        [SerializeField] private BasicData basicData;
-        [Header("Tylko dla gracza")]
-        [SerializeField] private PlayerMovement playerMovement;
+        public float startHealth = 100;
 
-        private float _currentHealth;
+        private float currentHealth;
 
         /// <summary>
         /// Initailzies the current health.
         /// </summary>
         private void Awake()
         {
-            _currentHealth = basicData.health;
+            currentHealth = startHealth;
         }
 
         /// <summary>
@@ -29,24 +26,17 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// <param name="amount"></param>
         public void Damage(float amount)
         {
-            _currentHealth = Mathf.Max(_currentHealth - amount, 0);
-            if (_currentHealth == 0) 
-            {
-                if (gameObject.tag=="Player")
-                {
-                    playerMovement.Die();
-                }
-                else
-                {
-                    gameObject.SetActive(false); 
-                }
+            currentHealth = Mathf.Max(currentHealth - amount, 0);
+
+            if (currentHealth == 0) {
+                gameObject.SetActive(false);
             }
         }
 
         // Is the object alive?
         public bool IsAlive()
         {
-            return _currentHealth > 0;
+            return currentHealth > 0;
         }
 
         /// <summary>
@@ -54,7 +44,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// </summary>
         public void ResetHealth()
         {
-            _currentHealth = basicData.health;
+            currentHealth = startHealth;
             gameObject.SetActive(true);
         }
     }
