@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
     {
         FallCheck();
         MainMovement();
-        Jump();
-        Crouch();
+        // Jump();
+        //Crouch();
     }
     private void FallCheck()
     {
