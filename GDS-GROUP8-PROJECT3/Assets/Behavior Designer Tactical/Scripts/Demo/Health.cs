@@ -7,8 +7,8 @@ namespace BehaviorDesigner.Runtime.Tactical
     /// </summary>
     public class Health : MonoBehaviour, IDamageable
     {
+        [SerializeField] private BasicData basicData;
         // The amount of health to begin with
-        public float startHealth = 100;
 
         private float currentHealth;
 
@@ -17,7 +17,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// </summary>
         private void Awake()
         {
-            currentHealth = startHealth;
+            currentHealth = basicData.health;
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// </summary>
         public void ResetHealth()
         {
-            currentHealth = startHealth;
+            currentHealth = basicData.health;
             gameObject.SetActive(true);
         }
     }
