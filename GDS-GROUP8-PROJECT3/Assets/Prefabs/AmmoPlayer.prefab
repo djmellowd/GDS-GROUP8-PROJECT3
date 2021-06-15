@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5185389433288235527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8612, y: 2.106, z: -18.0296}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,4 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBullet: {fileID: 11400000, guid: f1ebf3af52e79874392c81ab34d42066, type: 2}
-  rigidbody: {fileID: 6972354394649916994}
+  m_Rigidbody: {fileID: 6972354394649916994}
+  m_Transform: {fileID: 2452046685656750465}
+  direction: {x: 0, y: 0, z: 0}

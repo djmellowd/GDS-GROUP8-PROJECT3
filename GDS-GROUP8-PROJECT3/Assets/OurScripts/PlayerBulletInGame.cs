@@ -7,10 +7,17 @@ using UnityEngine;
 public class PlayerBulletInGame : MonoBehaviour
 {
     [SerializeField] private PlayerBullet playerBullet;
+    [SerializeField] private Rigidbody m_Rigidbody;
+    [SerializeField] public Transform StartPos;
     [HideInInspector]public Vector3 direction;
     private void OnEnable()
     {
         StartCoroutine(Destroy());
+    }
+
+    private void Update()
+    {
+        transform.position = Vector3.MoveTowards(transform.position,direction,playerBullet.bulletSpeed*Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision other)
