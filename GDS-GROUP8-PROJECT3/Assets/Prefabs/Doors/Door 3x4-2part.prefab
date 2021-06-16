@@ -17,8 +17,8 @@ GameObject:
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4705877507606918984
 Transform:
@@ -268,7 +268,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e8f33d28773ce94890240f218e46b69, type: 2}
+  - {fileID: 2100000, guid: 41d67b050a687954ca40bd2522ba45c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -321,6 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4705877508190997438}
   - component: {fileID: 4705877508190997437}
+  - component: {fileID: 405634012}
   m_Layer: 0
   m_Name: Door 3x4-2part
   m_TagString: Untagged
@@ -335,7 +336,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4705877508190997436}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -360,6 +361,22 @@ MonoBehaviour:
   rightPart: {fileID: 4705877507606918984}
   deviation: 2
   speed: 5
+  onTrigger: 1
+  OnButton: 0
+  button: {fileID: 0}
+--- !u!65 &405634012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705877508190997436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 3, z: 5}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &4705877509307483832
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,8 +394,8 @@ GameObject:
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4705877509307483813
 Transform:
@@ -628,7 +645,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e8f33d28773ce94890240f218e46b69, type: 2}
+  - {fileID: 2100000, guid: 41d67b050a687954ca40bd2522ba45c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
