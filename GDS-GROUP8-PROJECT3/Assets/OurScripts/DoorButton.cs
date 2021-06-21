@@ -30,13 +30,16 @@ public class DoorButton : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Bullet")
+        if (onHit)
         {
-            Debug.Log(1);
-            _hitTimes += 1;
-            if (_hitTimes== hit)
+            if (other.gameObject.tag == "Bullet")
             {
-                openDoor = true;
+                Debug.Log(1);
+                _hitTimes += 1;
+                if (_hitTimes== hit)
+                {
+                    openDoor = true;
+                }
             }
         }
     }

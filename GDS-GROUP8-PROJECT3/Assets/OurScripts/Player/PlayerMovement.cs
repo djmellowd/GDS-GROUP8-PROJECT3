@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private BasicData basicData;
 
     private Vector3 _velocity;
-    private bool _isGrounded;
     void Update()
     {
         MainMovement();
@@ -24,14 +23,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            characterController.Move(move * basicData.runningSpeed* Time.deltaTime);     
-        }
-        else
-        {
-            characterController.Move(move * basicData.speed* Time.deltaTime);     
-        }
+        characterController.Move(move * basicData.speed* Time.deltaTime);    
       
     }
 }
