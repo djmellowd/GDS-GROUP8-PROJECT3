@@ -60,7 +60,7 @@ public class AutomaticDoor : MonoBehaviour
                 OpenDoor();
             } 
         }
-        if (_closeDoor)
+        if (_closeDoor ||!button.openDoor)
         {
            CloseDoor();
         }

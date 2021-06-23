@@ -5,51 +5,45 @@ using UnityEngine;
 
 public class DoorButton : MonoBehaviour
 {
-    [SerializeField]private Renderer mRenderer;
-    [SerializeField]private bool onHit;
-    [SerializeField]private int hit = 3;
-    [SerializeField]private bool onClick;
+    [SerializeField] private Renderer mRenderer;
     public bool openDoor;
+    [SerializeField] private bool mainDoor;
+    [SerializeField] private List<Renderer> parts;
+    [SerializeField] private int rangeToClick = 5;
 
-    private int _hitTimes;
 
     private void OnMouseOver()
     {
-        if (onClick)
+        if (Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) > rangeToClick)
         {
-            mRenderer.material.color = Color.gray;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Vector3 newPos =  new Vector3(transform.position.x - 0.2f,transform.position.y,transform.position.z);
-                gameObject.transform.Translate(newPos);
-                openDoor = true;
-            }
+            mRenderer.material.color = Color.black;
+            return;
         }
-       
-    }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (onHit)
+        mRenderer.material.color = Color.gray;
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            if (other.gameObject.tag == "Bullet")
+            if (!openDoor)
             {
-                Debug.Log(1);
-                _hitTimes += 1;
-                if (_hitTimes== hit)
+                openDoor = true;
+                if (mainDoor)
                 {
-                    openDoor = true;
+                    foreach (var VARIABLE in parts)
+                    {
+                        VARIABLE.material.color = Color.green;
+                    }
                 }
             }
+            else
+            {
+                openDoor = false;
+            }
         }
     }
+
 
     private void OnMouseExit()
     {
-        if (onClick)
-        {
-            mRenderer.material.color = Color.black;
-        }
-        
+        mRenderer.material.color = Color.black;
     }
 }
