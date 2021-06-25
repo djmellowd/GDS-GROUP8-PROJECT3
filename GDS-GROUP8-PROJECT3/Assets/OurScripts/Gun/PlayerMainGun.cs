@@ -14,8 +14,7 @@ public class PlayerMainGun : MonoBehaviour
     private float t=0;
     
     
-    [SerializeField] private GameObject gunNormal;
-    [SerializeField] private GameObject gunOver;
+    [SerializeField] private Renderer gunNormal;
     [Header("Ammo")] [SerializeField] private Transform parentAmmo;
     [SerializeField] private GameObject ammoPreFab;
     private List<GameObject> _ammoList = new List<GameObject>();
@@ -72,16 +71,15 @@ public class PlayerMainGun : MonoBehaviour
         }
         else
         {
-            gunNormal.gameObject.SetActive(false);
-            gunOver.gameObject.SetActive(true);
+            gunNormal.materials[0].color = Color.red;
+            
         }
     }
 
     IEnumerator TimeBetweenShoots()
     {
         yield return new WaitForSeconds(playerBullet.overheatingTime);
-        gunNormal.gameObject.SetActive(true);
-        gunOver.gameObject.SetActive(false);
+        gunNormal.materials[0].color = Color.yellow;
         _resetGun = 0;
     }
 
