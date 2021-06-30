@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    //Assingables
+   [Header("Assingables")]
     [SerializeField] private Transform playerCam;
     [SerializeField] private Transform orientation;
     
-    //Other
+    [Header("Other")]
     [SerializeField] private Rigidbody rb;
-
-    //Rotation and look
+    
+    [Header("Rotation and look")]
     private float xRotation;
-    private float sensitivity = 50f;
+    [SerializeField] private float sensitivity = 50f;
     private float sensMultiplier = 1f;
     
-    //Movement
+    [Header("Movement")]
     [SerializeField] private float moveSpeed = 4500;
     [SerializeField] private float maxSpeed = 20;
     [SerializeField] private bool grounded;
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     
     //Input
     float x, y;
-    bool jumping, sprinting, crouching;
+   private bool jumping, sprinting, crouching;
     
     //Sliding
     private Vector3 normalVector = Vector3.up;
