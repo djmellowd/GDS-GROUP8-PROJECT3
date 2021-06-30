@@ -25,8 +25,8 @@ public class AutomaticDoor : MonoBehaviour
         _leftStart = leftPart.position;
         _rightStart = rightPart.position;
         
-        _leftDir = new Vector3(leftPart.position.x-deviation,leftPart.position.y,leftPart.position.z);
-        _rightDir = new Vector3(rightPart.position.x+deviation,rightPart.position.y,rightPart.position.z);
+        _leftDir = new Vector3(leftPart.position.x+deviation,leftPart.position.y,leftPart.position.z);
+        _rightDir = new Vector3(rightPart.position.x-deviation,rightPart.position.y,rightPart.position.z);
     }
 
     private void OnTriggerStay(Collider other)
