@@ -9,8 +9,9 @@ namespace BehaviorDesigner.Runtime.Tactical
     {
         [SerializeField] private BasicData basicData;
         // The amount of health to begin with
-
-        private float currentHealth;
+        [Header("!Only For Player!")]
+        [SerializeField] private HudManager hudManager;
+        [HideInInspector]public float currentHealth;
 
         /// <summary>
         /// Initailzies the current health.
@@ -27,6 +28,11 @@ namespace BehaviorDesigner.Runtime.Tactical
         public void Damage(float amount)
         {
             currentHealth = Mathf.Max(currentHealth - amount, 0);
+
+            if (hudManager != null)
+            {
+                hudManager.RefreshHpPlayer(currentHealth);
+            }
 
             if (currentHealth == 0) {
                 gameObject.SetActive(false);
