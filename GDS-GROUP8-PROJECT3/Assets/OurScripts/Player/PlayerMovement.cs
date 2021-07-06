@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     
     //Input
     float x, y;
-   private bool jumping, sprinting, crouching;
+
     
     //Sliding
     private Vector3 normalVector = Vector3.up;
@@ -63,10 +63,8 @@ public class PlayerMovement : MonoBehaviour {
     
 
     private void Movement() {
-        //Extra gravity
         rb.AddForce(Vector3.down * Time.deltaTime * 10);
         
-        //Find actual velocity relative to where player is looking
         Vector2 mag = FindVelRelativeToLook();
         float xMag = mag.x, yMag = mag.y;
 
@@ -94,7 +92,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         
         // Movement while sliding
-        if (grounded && crouching) multiplierV = 0f;
+       
 
         //Apply forces to move player
         rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
@@ -123,8 +121,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void CounterMovement(float x, float y, Vector2 mag) {
-        if (!grounded || jumping) return;
-        
+
 
         //Counter movement
         if (Math.Abs(mag.x) > threshold && Math.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) || (mag.x > threshold && x < 0)) {
@@ -142,11 +139,6 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// Find the velocity relative to where the player is looking
-    /// Useful for vectors calculations regarding movement and limiting movement
-    /// </summary>
-    /// <returns></returns>
     public Vector2 FindVelRelativeToLook() {
         float lookAngle = orientation.transform.eulerAngles.y;
         float moveAngle = Mathf.Atan2(rb.velocity.x, rb.velocity.z) * Mathf.Rad2Deg;

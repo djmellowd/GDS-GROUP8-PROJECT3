@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
-public class Doors : MonoBehaviour
+public class sDoors : MonoBehaviour
 {
 
     public AudioClip doorSound;
