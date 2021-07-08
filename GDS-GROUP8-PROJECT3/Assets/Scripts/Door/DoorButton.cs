@@ -11,10 +11,12 @@ public class DoorButton : MonoBehaviour
     [SerializeField] private List<Renderer> parts;
     [SerializeField] private Objects scriptableObject;
     private int rangeToClick;
+    private KeyCode interactionButton;
 
     private void Awake()
     {
         rangeToClick = scriptableObject.rangeToClick;
+        interactionButton = scriptableObject.button;
     }
     private void OnMouseOver()
     {
@@ -25,7 +27,7 @@ public class DoorButton : MonoBehaviour
         }
 
         mRenderer.material.color = Color.gray;
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(interactionButton))
         {
             if (!openDoor)
             {

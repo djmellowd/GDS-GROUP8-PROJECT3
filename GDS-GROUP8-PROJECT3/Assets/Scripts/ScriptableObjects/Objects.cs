@@ -5,4 +5,5 @@ using UnityEngine;
 public class Objects : ScriptableObject
 {
  public int rangeToClick = 5;
+    public KeyCode button;
 }
