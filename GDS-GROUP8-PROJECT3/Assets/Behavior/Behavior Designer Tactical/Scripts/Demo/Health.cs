@@ -44,6 +44,15 @@ namespace BehaviorDesigner.Runtime.Tactical
         {
             return currentHealth > 0;
         }
+        public void RegenHp(int hpToRegen)
+        {
+            currentHealth += hpToRegen;
+            if (currentHealth >basicData.health)
+            {
+                currentHealth = basicData.health;
+            }
+            hudManager.RefreshHpPlayer(currentHealth);
+        }
 
         /// <summary>
         /// Sets the current health to the starting health and enables the object.
