@@ -38,7 +38,18 @@ namespace BehaviorDesigner.Runtime.Tactical
                 gameObject.SetActive(false);
             }
         }
+        public void RegenHp(int hpToRegen)
+        {
+            currentHealth += hpToRegen;
+            if (currentHealth > basicData.health)
+            {
+                Debug.Log("Dodano hp");
+                currentHealth = basicData.health;
+            }
+            hudManager.RefreshHpPlayer(currentHealth);
 
+
+        }
         // Is the object alive?
         public bool IsAlive()
         {

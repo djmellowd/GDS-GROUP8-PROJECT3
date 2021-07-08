@@ -6,4 +6,7 @@ public class Objects : ScriptableObject
 {
  public int rangeToClick = 5;
     public KeyCode button;
+
+    [Header("First Kid")]
+    public int hpRegen;
 }
