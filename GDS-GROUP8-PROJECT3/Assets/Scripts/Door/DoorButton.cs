@@ -9,9 +9,14 @@ public class DoorButton : MonoBehaviour
     public bool openDoor;
     [SerializeField] private bool mainDoor;
     [SerializeField] private List<Renderer> parts;
-    [SerializeField] private int rangeToClick = 5;
+    [SerializeField] private Objects seriaObject;
 
+    private int rangeToClick;
 
+    private void Awake()
+    {
+        rangeToClick = seriaObject.rangeToClick;
+    }
     private void OnMouseOver()
     {
         if (Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) > rangeToClick)
@@ -21,7 +26,7 @@ public class DoorButton : MonoBehaviour
         }
 
         mRenderer.material.color = Color.gray;
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(seriaObject.button))
         {
             if (!openDoor)
             {
