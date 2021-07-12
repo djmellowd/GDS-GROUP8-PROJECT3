@@ -2,6 +2,7 @@
 
 using System;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -26,9 +27,13 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float counterMovement = 0.175f;
     private float threshold = 0.01f;
     [SerializeField] private float maxSlopeAngle = 35f;
-    
-    
-    
+
+    private AudioManager audioManager;
+    private bool playerMove;
+    private bool playerStopMove;
+    private Vector3  currentPos;
+    private float timeToReset;
+
     //Input
     float x, y;
 
@@ -36,11 +41,15 @@ public class PlayerMovement : MonoBehaviour {
     //Sliding
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
-    
-    
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        currentPos = transform.position;
     }
 
     
@@ -50,19 +59,44 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update() {
         MyInput();
+        AudioPlayer();
         Look();
     }
 
     /// <summary>
     /// Find user input. Should put this in its own class but im lazy
     /// </summary>
-    private void MyInput() {
+    private void MyInput()
+    {
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
+        if (x == 0 && y == 0)
+        {
+            playerMove = false;
+        }
+        else
+        {
+            playerMove = true;
+        }
     }
-    
+    private void AudioPlayer()
+    {       
+        if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D))
+        {
+            audioManager.Play("Test");
+        }
+        if (!playerMove)
+        {
+            audioManager.Stop("Test");
+        }
 
-    private void Movement() {
+    }
+    private IEnumerator ResetAudio(float time)
+    {
+        yield return new WaitForSeconds(0.1f);
+
+    }
+private void Movement() {
         rb.AddForce(Vector3.down * Time.deltaTime * 10);
         
         Vector2 mag = FindVelRelativeToLook();
@@ -91,12 +125,14 @@ public class PlayerMovement : MonoBehaviour {
             multiplierV = 0.5f;
         }
         
-        // Movement while sliding
+
        
 
         //Apply forces to move player
         rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
         rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+      
+   
     }
 
     

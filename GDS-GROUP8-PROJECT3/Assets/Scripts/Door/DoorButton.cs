@@ -11,6 +11,7 @@ public class DoorButton : MonoBehaviour
     [SerializeField] private List<Renderer> parts;
     [SerializeField] private Objects seriaObject;
 
+    private AudioManager audioManager;
     private int rangeToClick;
 
     private void Awake()
