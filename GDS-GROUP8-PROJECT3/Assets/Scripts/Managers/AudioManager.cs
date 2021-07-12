@@ -58,4 +58,24 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Stop();
     }
+    public void StopLoop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("Nie ma takiego dźwięku jak: " + name);
+            return;
+        }
+        s.source.loop = false;
+    }
+    public void StartLoop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.Log("Nie ma takiego dźwięku jak: " + name);
+            return;
+        }
+        s.source.loop = true;
+    }
 }

@@ -16,6 +16,7 @@ public class PlayerMainGun : MonoBehaviour
     
     [SerializeField] private Renderer gunNormal;
     [Header("Ammo")] [SerializeField] private Transform parentAmmo;
+    [SerializeField] private GameObject particleShoot;
     [SerializeField] private GameObject ammoPreFab;
     private List<GameObject> _ammoList = new List<GameObject>();
     private Vector3 _destination;
@@ -55,7 +56,6 @@ public class PlayerMainGun : MonoBehaviour
 
     private void Aiming()
     {
-        Debug.Log(1);
         var value = Mathf.Lerp(_startCam, endCam, t);
         cam.fieldOfView = value;
         t += 8 * Time.deltaTime;
@@ -89,6 +89,9 @@ public class PlayerMainGun : MonoBehaviour
         {
             if (!_ammoList[i].activeInHierarchy)
             {
+              ParticleControler particle = Instantiate(particleShoot, barrel.transform.position, transform.rotation).GetComponent<ParticleControler>();
+                particle.startPos = barrel.gameObject;
+
                 Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))

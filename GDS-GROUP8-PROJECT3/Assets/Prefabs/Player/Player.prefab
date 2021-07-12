@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703046976093379189}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.776, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2562433062737686192}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586538064054634369}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.409, z: 0.229}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0.229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2562433061578829408}
@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 2562433061578829408}
   - component: {fileID: 2562433061578829411}
   - component: {fileID: 2562433061578829405}
+  - component: {fileID: 692880080}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -163,7 +164,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -189,6 +190,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2562433061578829409}
   m_Enabled: 1
+--- !u!114 &692880080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562433061578829409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2562433062737686201
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,8 +353,9 @@ MonoBehaviour:
   playerCam: {fileID: 8274727243182032188}
   orientation: {fileID: 9081958692756935294}
   rb: {fileID: 1414711881}
-  moveSpeed: 4500
-  maxSpeed: 20
+  sensitivity: 50
+  moveSpeed: 2200
+  maxSpeed: 5
   grounded: 0
   whatIsGround:
     serializedVersion: 2
@@ -342,6 +375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicData: {fileID: 11400000, guid: 407028ed8bc698840bd8823c6701f5a9, type: 2}
+  hudManager: {fileID: 0}
+  currentHealth: 0
 --- !u!54 &1414711881
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -412,15 +447,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8801624618069705860}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.67700195, y: -0.42299998, z: 0.6949945}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.06518806, z: -0, w: 0.99787307}
+  m_LocalPosition: {x: -0.24, y: -0.42299998, z: 1.25}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 6700111377898292998}
   - {fileID: 594498236537685391}
   m_Father: {fileID: 2562433061578829408}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 7.4750004, z: 0}
 --- !u!114 &2661026527258668608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +474,8 @@ MonoBehaviour:
   endCam: 35
   gunNormal: {fileID: 1727114329581932085}
   parentAmmo: {fileID: 2749245697160769470}
+  particleShoot: {fileID: 6133024262641956055, guid: e7d4804c3ee26fd49b661c484a2099b3,
+    type: 3}
   ammoPreFab: {fileID: 5185389433288235527, guid: 6c9f2f792bd1855478de49ae2daad0a2,
     type: 3}
 --- !u!1001 &1137912631581057636
@@ -456,7 +493,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 70538584d6070954d9e7678c3a693335,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.104
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70538584d6070954d9e7678c3a693335,
         type: 3}
@@ -466,7 +503,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 70538584d6070954d9e7678c3a693335,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.032
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70538584d6070954d9e7678c3a693335,
         type: 3}
