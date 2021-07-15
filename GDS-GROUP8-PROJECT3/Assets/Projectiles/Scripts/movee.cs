@@ -4,64 +4,69 @@ using UnityEngine;
 
 public class movee : MonoBehaviour
 {
-    public float speed;
-    public float fireRate;
+    [SerializeField] PlayerBullet bullet;
     public GameObject muzzlePrefab;
     public GameObject hitPrefab;
 
-    void Start()
+    private float localSpeed;
+   
+
+    void OnEnable()
     {
-        if (muzzlePrefab != null)
+        localSpeed = bullet.bulletSpeed;
+        StartCoroutine(AutoDestro());
+
+        var muzzleVFX = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
+        muzzleVFX.transform.forward = gameObject.transform.forward;
+        var psMuzzle = muzzleVFX.GetComponent<ParticleSystem>();
+        if (psMuzzle != null)
+            Destroy(muzzleVFX, psMuzzle.main.duration);
+        else
         {
-            var muzzleVFX = Instantiate(muzzlePrefab, transform.position, Quaternion.identity);
-            muzzleVFX.transform.forward = gameObject.transform.forward;
-            var psMuzzle = muzzleVFX.GetComponent<ParticleSystem>();
-            if (psMuzzle != null)
-                Destroy(muzzleVFX, psMuzzle.main.duration);
-            else
-            {
-                var psChild = muzzleVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(muzzleVFX, psChild.main.duration);
-            }
+            var psChild = muzzleVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+            Destroy(muzzleVFX, psChild.main.duration);
         }
     }
 
 
     void Update()
     {
-        if (speed != 0)
+        if (localSpeed != 0)
         {
-            transform.position += transform.forward * (speed * Time.deltaTime);
+            transform.position += transform.forward * (localSpeed * Time.deltaTime);
         }
         else
         {
             Debug.Log("No Speed");
         }
     }
-
+    IEnumerator AutoDestro()
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
     void OnCollisionEnter(Collision co)
     {
-        speed = 0;
+            localSpeed = 0;
+            ContactPoint contact = co.contacts[0];
+            Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
+            Vector3 pos = contact.point;
 
-        ContactPoint contact = co.contacts[0];
-        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        Vector3 pos = contact.point;
-
-        if (hitPrefab != null)
-        {
-            var hitVFX = Instantiate(hitPrefab, pos, rot);
-            var psHit = hitVFX.GetComponent<ParticleSystem>();
-            if (psHit != null)
-                Destroy(hitVFX, psHit.main.duration);
-
-            else
+            if (hitPrefab != null)
             {
-                var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(hitVFX, psChild.main.duration);
+                var hitVFX = Instantiate(hitPrefab, pos, rot);
+                var psHit = hitVFX.GetComponent<ParticleSystem>();
+                if (psHit != null)
+                    Destroy(hitVFX, psHit.main.duration);
+
+                else
+                {
+                    var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+                    Destroy(hitVFX, psChild.main.duration);
+                }
             }
-        }
 
-        Destroy(gameObject);
-
+            gameObject.SetActive(false);
+        
     }
 }
