@@ -16,10 +16,13 @@ public class PlayerMainGun : MonoBehaviour
     [SerializeField]
     private Transform parentAmmo;
     [SerializeField]
+    private GameObject particleShoot;
+    [SerializeField]
     private GameObject ammoPreFab;
 
     private List<GameObject> ammoList = new List<GameObject>();
     private float timeToFire;
+    private Vector3 destination;
     private int resetGun;
     private float normalGunFov;
     private float smoothFovTransition;
@@ -45,7 +48,9 @@ public class PlayerMainGun : MonoBehaviour
             ammoList.Add(ammo);
             ammo.SetActive(false);
         }
-    }  
+    }
+
+   
 
     private void Aiming()
     {
@@ -61,7 +66,6 @@ public class PlayerMainGun : MonoBehaviour
             mainCamera.fieldOfView = normalGunFov;
         }       
     }
-
     private void Overheating()
     {
         if (Input.GetMouseButton(0) && Time.time >= timeToFire)
@@ -72,7 +76,7 @@ public class PlayerMainGun : MonoBehaviour
             {
                 StopAllCoroutines();
                 resetGun += 1;
-                SetActiveBullet();
+                Shooting();
                 StartCoroutine(TimeBetweenShoots());
             }
             else
@@ -89,14 +93,25 @@ public class PlayerMainGun : MonoBehaviour
         resetGun = 0;
     }
 
-    private void SetActiveBullet()
+    private void Shooting()
     {
         for (int i = 0; i < ammoList.Count; i++)
         {
             if (!ammoList[i].activeInHierarchy)
             {
+                ParticleControler particle = Instantiate(particleShoot, spawnPoint.transform.position, transform.rotation).GetComponent<ParticleControler>();    
+                particle.startPos = spawnPoint;
+
+                Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    destination = hit.point;
+                }
                 ammoList[i].transform.position = spawnPoint.transform.position;
                 ammoList[i].SetActive(true);
+                var rbAmmo = ammoList[i].GetComponent<PlayerBulletInGame>();
+                rbAmmo.direction = destination;
                 return;
             }
         }
