@@ -17,6 +17,8 @@ public class PlayerMainGun : MonoBehaviour
     private Transform parentAmmo;
     [SerializeField]
     private GameObject ammoPreFab;
+    [SerializeField] 
+    private GameObject muzzlePrefab;
 
     private List<GameObject> ammoList = new List<GameObject>();
     private float timeToFire;
@@ -47,8 +49,6 @@ public class PlayerMainGun : MonoBehaviour
             ammo.SetActive(false);
         }
     }
-
-   
 
     private void Aiming()
     {
@@ -96,7 +96,8 @@ public class PlayerMainGun : MonoBehaviour
         for (int i = 0; i < ammoList.Count; i++)
         {
             if (!ammoList[i].activeInHierarchy)
-            {          
+            {
+                Instantiate(muzzlePrefab,spawnPoint.transform.position,transform.rotation, spawnPoint.transform.parent);
 
                 Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;
@@ -104,13 +105,16 @@ public class PlayerMainGun : MonoBehaviour
                 {
                     destination = hit.point;
                 }
+
                 ammoList[i].transform.position = spawnPoint.transform.position;
-                ammoList[i].SetActive(true);
+                ammoList[i].transform.rotation = gameObject.transform.rotation;
                 var rbAmmo = ammoList[i].GetComponent<movee>();
-                Debug.Log(destination);
                 rbAmmo.direction = destination;
+                rbAmmo.starPos = spawnPoint.position;
+                ammoList[i].SetActive(true);           
                 return;
             }
         }
     }
+    
 }
