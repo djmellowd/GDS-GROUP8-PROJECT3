@@ -16,8 +16,6 @@ public class PlayerMainGun : MonoBehaviour
     [SerializeField]
     private Transform parentAmmo;
     [SerializeField]
-    private GameObject particleShoot;
-    [SerializeField]
     private GameObject ammoPreFab;
 
     private List<GameObject> ammoList = new List<GameObject>();
@@ -98,9 +96,7 @@ public class PlayerMainGun : MonoBehaviour
         for (int i = 0; i < ammoList.Count; i++)
         {
             if (!ammoList[i].activeInHierarchy)
-            {
-                ParticleControler particle = Instantiate(particleShoot, spawnPoint.transform.position, transform.rotation).GetComponent<ParticleControler>();    
-                particle.startPos = spawnPoint;
+            {          
 
                 Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;
@@ -110,7 +106,8 @@ public class PlayerMainGun : MonoBehaviour
                 }
                 ammoList[i].transform.position = spawnPoint.transform.position;
                 ammoList[i].SetActive(true);
-                var rbAmmo = ammoList[i].GetComponent<PlayerBulletInGame>();
+                var rbAmmo = ammoList[i].GetComponent<movee>();
+                Debug.Log(destination);
                 rbAmmo.direction = destination;
                 return;
             }

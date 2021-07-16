@@ -7,6 +7,7 @@ public class movee : MonoBehaviour
     [SerializeField] PlayerBullet bullet;
     public GameObject muzzlePrefab;
     public GameObject hitPrefab;
+    [HideInInspector]public Vector3 direction;
 
     private float localSpeed;
    
@@ -33,7 +34,7 @@ public class movee : MonoBehaviour
     {
         if (localSpeed != 0)
         {
-            transform.position += transform.forward * (localSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, direction, bullet.bulletSpeed * Time.deltaTime);
         }
         else
         {
