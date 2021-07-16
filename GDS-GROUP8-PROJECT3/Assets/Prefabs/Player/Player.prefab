@@ -354,7 +354,7 @@ MonoBehaviour:
   orientation: {fileID: 9081958692756935294}
   rb: {fileID: 1414711881}
   sensitivity: 50
-  moveSpeed: 2200
+  moveSpeed: 6000
   maxSpeed: 5
   grounded: 0
   whatIsGround:
@@ -472,8 +472,10 @@ MonoBehaviour:
   bullet: {fileID: 11400000, guid: f1ebf3af52e79874392c81ab34d42066, type: 2}
   mainCamera: {fileID: 2562433061578829411}
   gunFragmentRender: {fileID: 1727114329581932085}
-  parentAmmo: {fileID: 2749245697160769470}
+  parentAmmo: {fileID: 0}
   ammoPreFab: {fileID: 8376491341957091603, guid: 11ff8c5fa5ea9624c914882c74d747d4,
+    type: 3}
+  muzzlePrefab: {fileID: 6133024262641956055, guid: e7d4804c3ee26fd49b661c484a2099b3,
     type: 3}
 --- !u!1001 &1137912631581057636
 PrefabInstance:
