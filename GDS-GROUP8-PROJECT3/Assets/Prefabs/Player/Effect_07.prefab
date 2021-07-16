@@ -4710,7 +4710,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 004443aae9a39c0459ee93b9e17576b2, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9522,7 +9521,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ea33f60f38f9a9d46a958bb3815e432f, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9575,9 +9573,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7439259279527987078}
-  - component: {fileID: 6977895881881961230}
   - component: {fileID: 6606628608816052417}
-  - component: {fileID: -4751623103559267582}
+  - component: {fileID: 5843590408214350513}
+  - component: {fileID: 7921203238434719529}
   m_Layer: 0
   m_Name: Effect_07
   m_TagString: Untagged
@@ -9601,19 +9599,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6977895881881961230
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8376491341957091603}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6606628608816052417
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9628,9 +9613,23 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-4751623103559267582
+--- !u!136 &5843590408214350513
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8376491341957091603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.09754515
+  m_Height: 1.3252945
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.60064507}
+--- !u!114 &7921203238434719529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9642,8 +9641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3b0139d137f2248806402d2047164b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  fireRate: 5
+  bullet: {fileID: 11400000, guid: f1ebf3af52e79874392c81ab34d42066, type: 2}
   muzzlePrefab: {fileID: 6133024262641956055, guid: e7d4804c3ee26fd49b661c484a2099b3,
     type: 3}
   hitPrefab: {fileID: 8677504590448557550, guid: 2c2d2a4dd141d294f88635e61e200a31,

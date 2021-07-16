@@ -22,7 +22,7 @@ public class spawnn : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && Time.time >= timeToFire)
         {
-            timeToFire = Time.time + 1 / effectToSpawn.GetComponent<movee>().fireRate;
+
             SpawnVFX();
         }
 

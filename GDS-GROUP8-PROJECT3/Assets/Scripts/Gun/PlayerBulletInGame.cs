@@ -8,12 +8,9 @@ public class PlayerBulletInGame : MonoBehaviour
 {
     [SerializeField] private PlayerBullet playerBullet;
     [SerializeField] private Rigidbody m_Rigidbody;
-    [SerializeField] public Transform StartPos;
+    [HideInInspector] public Transform StartPos;
     [HideInInspector]public Vector3 direction;
-    private void OnEnable()
-    {
-        StartCoroutine(Destroy());
-    }
+
 
     private void Update()
     {
@@ -27,16 +24,6 @@ public class PlayerBulletInGame : MonoBehaviour
         {
             enemy.Damage(playerBullet.damage);
         }
-
-        if (other.gameObject.tag == "Ground")
-        {
-            gameObject.SetActive(false);
-        }
-    }
-
-    IEnumerator Destroy()
-    {
-        yield return new WaitForSeconds(playerBullet.timeToDestory);
         gameObject.SetActive(false);
     }
 }
