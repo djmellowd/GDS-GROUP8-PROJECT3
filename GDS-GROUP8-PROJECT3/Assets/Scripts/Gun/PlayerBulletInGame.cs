@@ -22,7 +22,9 @@ public class PlayerBulletInGame : MonoBehaviour
         var enemy = other.gameObject.GetComponent<Health>();
         if (enemy!=null && other.gameObject.tag!="Player" )
         {
+            Debug.Log(enemy.currentHealth);
             enemy.Damage(playerBullet.damage);
+            Debug.Log(enemy.currentHealth);
         }
         gameObject.SetActive(false);
     }

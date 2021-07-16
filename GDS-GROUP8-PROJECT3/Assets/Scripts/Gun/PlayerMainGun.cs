@@ -17,9 +17,12 @@ public class PlayerMainGun : MonoBehaviour
     private Transform parentAmmo;
     [SerializeField]
     private GameObject ammoPreFab;
+    [SerializeField] 
+    private GameObject muzzlePrefab;
 
     private List<GameObject> ammoList = new List<GameObject>();
     private float timeToFire;
+    private Vector3 destination;
     private int resetGun;
     private float normalGunFov;
     private float smoothFovTransition;
@@ -45,7 +48,7 @@ public class PlayerMainGun : MonoBehaviour
             ammoList.Add(ammo);
             ammo.SetActive(false);
         }
-    }  
+    }
 
     private void Aiming()
     {
@@ -61,7 +64,6 @@ public class PlayerMainGun : MonoBehaviour
             mainCamera.fieldOfView = normalGunFov;
         }       
     }
-
     private void Overheating()
     {
         if (Input.GetMouseButton(0) && Time.time >= timeToFire)
@@ -72,7 +74,7 @@ public class PlayerMainGun : MonoBehaviour
             {
                 StopAllCoroutines();
                 resetGun += 1;
-                SetActiveBullet();
+                Shooting();
                 StartCoroutine(TimeBetweenShoots());
             }
             else
@@ -89,16 +91,30 @@ public class PlayerMainGun : MonoBehaviour
         resetGun = 0;
     }
 
-    private void SetActiveBullet()
+    private void Shooting()
     {
         for (int i = 0; i < ammoList.Count; i++)
         {
             if (!ammoList[i].activeInHierarchy)
             {
+                Instantiate(muzzlePrefab,spawnPoint.transform.position,transform.rotation, spawnPoint.transform.parent);
+
+                Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    destination = hit.point;
+                }
+
                 ammoList[i].transform.position = spawnPoint.transform.position;
-                ammoList[i].SetActive(true);
+                ammoList[i].transform.rotation = gameObject.transform.rotation;
+                var rbAmmo = ammoList[i].GetComponent<movee>();
+                rbAmmo.direction = destination;
+                rbAmmo.starPos = spawnPoint.position;
+                ammoList[i].SetActive(true);           
                 return;
             }
         }
     }
+    
 }
