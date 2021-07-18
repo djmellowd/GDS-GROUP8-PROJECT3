@@ -83,12 +83,13 @@ public class PlayerMovement : MonoBehaviour {
     {       
         if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D))
         {
-            audioManager.StartLoop("PlayerMovement");
-            audioManager.Play("PlayerMovement");
+            audioManager.StartLoop("Test");
+            audioManager.Play("Test");
         }
         if (!playerMove)
         {
-            audioManager.StopLoop("PlayerMovement");
+            audioManager.StopLoop("Test");
+           // audioManager.Stop("Test");
         }
 
     }
