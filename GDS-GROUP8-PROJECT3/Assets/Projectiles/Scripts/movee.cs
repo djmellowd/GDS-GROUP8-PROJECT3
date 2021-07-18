@@ -5,13 +5,32 @@ using BehaviorDesigner.Runtime.Tactical;
 
 public class movee : MonoBehaviour
 {
+    private const string AudioShootingString = "Shooting";
+
     [SerializeField] PlayerBullet bullet;
     [SerializeField] GameObject hitPrefab;
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public Vector3 starPos;
 
+    private AudioManager audioManager;
+    private bool firstInit = true;
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     void OnEnable()
     {
+        if (firstInit)
+        {
+            firstInit = false;
+        }
+        else
+        {
+            audioManager.Play(AudioShootingString);
+        }
+
+
         StartCoroutine(AutoDestro());
     }
     void Update()
@@ -30,7 +49,6 @@ public class movee : MonoBehaviour
         if (enemy != null && other.gameObject.tag != "Player")
         {
             enemy.Damage(bullet.damage);
-            gameObject.SetActive(false);
         }
         else
         {
@@ -49,8 +67,7 @@ public class movee : MonoBehaviour
                 var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
                 Destroy(hitVFX, psChild.main.duration);
             }
-            gameObject.SetActive(false);
         }
-       
+        gameObject.SetActive(false);      
     }
 }

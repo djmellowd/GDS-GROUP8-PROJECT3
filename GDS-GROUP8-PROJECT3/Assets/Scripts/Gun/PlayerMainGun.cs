@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMainGun : MonoBehaviour
 {
+    private const string OverheatAudioString = "Overheat";
+
     [SerializeField]
     private Transform spawnPoint;
     [SerializeField]
@@ -26,9 +28,11 @@ public class PlayerMainGun : MonoBehaviour
     private int resetGun;
     private float normalGunFov;
     private float smoothFovTransition;
+    private AudioManager audioManager;
 
     void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         normalGunFov = mainCamera.fieldOfView;
 
         PullObjectAmmo();
@@ -79,6 +83,7 @@ public class PlayerMainGun : MonoBehaviour
             }
             else
             {
+                audioManager.Play(OverheatAudioString);
                 gunFragmentRender.materials[0].color = Color.red;
             }
         }
