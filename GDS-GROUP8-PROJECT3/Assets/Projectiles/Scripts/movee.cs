@@ -13,6 +13,7 @@ public class movee : MonoBehaviour
     [HideInInspector] public Vector3 starPos;
 
     private AudioManager audioManager;
+    private bool firstInit = true;
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
@@ -20,7 +21,15 @@ public class movee : MonoBehaviour
 
     void OnEnable()
     {
-        audioManager.Play(AudioShootingString);
+        if (firstInit)
+        {
+            firstInit = false;
+        }
+        else
+        {
+            audioManager.Play(AudioShootingString);
+        }
+
 
         StartCoroutine(AutoDestro());
     }
