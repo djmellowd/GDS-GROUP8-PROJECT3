@@ -5,13 +5,23 @@ using BehaviorDesigner.Runtime.Tactical;
 
 public class movee : MonoBehaviour
 {
+    private const string AudioShootingString = "Shooting";
     [SerializeField] PlayerBullet bullet;
     [SerializeField] GameObject hitPrefab;
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public Vector3 starPos;
 
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     void OnEnable()
     {
+        audioManager.Play(AudioShootingString);
+
         StartCoroutine(AutoDestro());
     }
     void Update()
