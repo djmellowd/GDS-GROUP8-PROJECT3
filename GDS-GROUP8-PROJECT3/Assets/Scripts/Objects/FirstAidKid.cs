@@ -16,6 +16,7 @@ public class FirstAidKid : MonoBehaviour
     {
         regen = scriptableObject.hpRegen;
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == NamePlayer)

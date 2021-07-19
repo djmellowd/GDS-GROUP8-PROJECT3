@@ -17,7 +17,7 @@ public class PlayerMainGun : MonoBehaviour
     private Transform parentAmmo;
     [SerializeField]
     private GameObject ammoPreFab;
-    [SerializeField] 
+    [SerializeField]
     private GameObject muzzlePrefab;
 
     private List<GameObject> ammoList = new List<GameObject>();
@@ -58,11 +58,11 @@ public class PlayerMainGun : MonoBehaviour
             mainCamera.fieldOfView = value;
             smoothFovTransition += 8 * Time.deltaTime;
         }
-         if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1))
         {
             smoothFovTransition = 0;
             mainCamera.fieldOfView = normalGunFov;
-        }       
+        }
     }
     private void Overheating()
     {
@@ -84,6 +84,7 @@ public class PlayerMainGun : MonoBehaviour
         }
     }
 
+
     IEnumerator TimeBetweenShoots()
     {
         yield return new WaitForSeconds(bullet.overheatingTime);
@@ -97,7 +98,7 @@ public class PlayerMainGun : MonoBehaviour
         {
             if (!ammoList[i].activeInHierarchy)
             {
-                Instantiate(muzzlePrefab,spawnPoint.transform.position,transform.rotation, spawnPoint.transform.parent);
+                Instantiate(muzzlePrefab, spawnPoint.transform.position, transform.rotation, spawnPoint.transform.parent);
 
                 Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;
@@ -111,10 +112,10 @@ public class PlayerMainGun : MonoBehaviour
                 var rbAmmo = ammoList[i].GetComponent<movee>();
                 rbAmmo.direction = destination;
                 rbAmmo.starPos = spawnPoint.position;
-                ammoList[i].SetActive(true);           
+                ammoList[i].SetActive(true);
                 return;
             }
         }
     }
-    
+
 }
