@@ -12,8 +12,10 @@ public class MoveCamera : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.Play(AmbientAudio);
     }
+
     void Update()
     {
         transform.position = player.transform.position;
     }
+
 }

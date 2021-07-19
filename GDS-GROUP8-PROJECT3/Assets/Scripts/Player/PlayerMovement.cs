@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             audioManager.StartLoop("PlayerMovement");
             audioManager.Play("PlayerMovement");
+
         }
         if (!playerMove)
         {

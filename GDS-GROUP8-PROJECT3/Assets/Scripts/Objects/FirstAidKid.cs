@@ -17,6 +17,7 @@ public class FirstAidKid : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         regen = scriptableObject.hpRegen;
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == NamePlayer)

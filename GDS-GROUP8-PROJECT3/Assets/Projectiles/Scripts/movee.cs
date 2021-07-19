@@ -35,7 +35,7 @@ public class movee : MonoBehaviour
     }
     void Update()
     {
-       transform.position = Vector3.Lerp(transform.position, direction, bullet.bulletSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, direction, bullet.bulletSpeed * Time.deltaTime);
     }
 
     IEnumerator AutoDestro()
@@ -68,6 +68,6 @@ public class movee : MonoBehaviour
                 Destroy(hitVFX, psChild.main.duration);
             }
         }
-        gameObject.SetActive(false);      
+        gameObject.SetActive(false);
     }
 }
