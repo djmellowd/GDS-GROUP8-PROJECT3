@@ -14,11 +14,14 @@ public class HudManager : MonoBehaviour
     private int barsSpeed;
 
     [Header("Player HP")]
-
     [SerializeField]
     private Slider hpSlider;
     [SerializeField]
     private BasicData playerData;
+
+    [Header("Damage Icons")]
+    [SerializeField]
+    private List<GameObject> damageIcons;
 
     [Header("Overheat")]
     [SerializeField]
@@ -64,11 +67,32 @@ public class HudManager : MonoBehaviour
     public void RefreshHpPlayer(float currentHp)
     {
         _playerCurrentHp = currentHp;
+        if (currentHp <= 50 && currentHp > 25)
+        {
+            ActiveIcon(0);
+        }
+        else if (currentHp <= 25 && currentHp > 5)
+        {
+            ActiveIcon(1);
+        }
+        else if (currentHp <= 5)
+        {
+            ActiveIcon(2);
+        }
     }
 
     public void RefreshOverheatPlayer(float currentOverheat)
     {
-        _playerCurrentOverheat = currentOverheat;
+        _playerCurrentOverheat = currentOverheat;      
+    }
+
+    private void ActiveIcon(int number)
+    {
+        foreach (var item in damageIcons)
+        {
+            item.SetActive(false);
+        }
+        damageIcons[number].SetActive(true);
     }
 
 }
