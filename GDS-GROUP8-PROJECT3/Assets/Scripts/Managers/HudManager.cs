@@ -9,39 +9,66 @@ using Unity.Collections;
 
 public class HudManager : MonoBehaviour
 {
-   [Header("Player HP")]
-   [SerializeField] private Slider hpSlider;
-   [SerializeField] private TextMeshProUGUI hpValueText;
-   [SerializeField][Range(1,10)] private int barSpeed;
-   private float _playerCurrentHp;
+    [SerializeField]
+    [Range(1, 10)]
+    private int barsSpeed;
 
-   [SerializeField] private BasicData playerData;
-   
-   private void Awake()
-   {
-      _playerCurrentHp = playerData.health;
-      InitializationHealthPanel();
-   }
-   private void Update()
-   {
-      if (_playerCurrentHp !=hpSlider.value)
-      {
-         hpSlider.value = Mathf.MoveTowards(hpSlider.value, _playerCurrentHp, barSpeed * Time.deltaTime);
-      }
-   }
+    [Header("Player HP")]
 
-   private void InitializationHealthPanel()
-   {
-      hpSlider.maxValue = _playerCurrentHp;
-      hpSlider.value = _playerCurrentHp;
+    [SerializeField]
+    private Slider hpSlider;
+    [SerializeField]
+    private BasicData playerData;
 
-      hpValueText.text = _playerCurrentHp.ToString();
-   }
-   public void RefreshHpPlayer(float currentHp)
-   {
-      _playerCurrentHp = currentHp;
-      hpValueText.text = currentHp.ToString();
-   }
+    [Header("Overheat")]
+    [SerializeField]
+    private Slider overheatSlider;
+    [SerializeField]
+    private PlayerBullet overheatData;
 
-  
+    private float _playerCurrentHp;
+    private float _playerCurrentOverheat=0;
+
+    private void Awake()
+    {
+        _playerCurrentHp = playerData.health;
+
+        InitializationHealthPanel();
+        InitializationOverheatPanel();
+    }
+
+    private void Update()
+    {
+        if (_playerCurrentHp != hpSlider.value)
+        {
+            hpSlider.value = Mathf.MoveTowards(hpSlider.value, _playerCurrentHp, barsSpeed * Time.deltaTime);
+        }
+        if ((overheatSlider.maxValue - _playerCurrentOverheat) != overheatSlider.value)
+        {
+            overheatSlider.value = Mathf.MoveTowards(overheatSlider.value,(overheatSlider.maxValue- _playerCurrentOverheat), barsSpeed * Time.deltaTime);
+        }
+    }
+
+    private void InitializationHealthPanel()
+    {
+        hpSlider.maxValue = _playerCurrentHp;
+        hpSlider.value = _playerCurrentHp;
+    }
+
+    private void InitializationOverheatPanel()
+    {
+        overheatSlider.maxValue = overheatData.limitAmmo;
+        overheatSlider.value = overheatSlider.maxValue;
+    }
+
+    public void RefreshHpPlayer(float currentHp)
+    {
+        _playerCurrentHp = currentHp;
+    }
+
+    public void RefreshOverheatPlayer(float currentOverheat)
+    {
+        _playerCurrentOverheat = currentOverheat;
+    }
+
 }
