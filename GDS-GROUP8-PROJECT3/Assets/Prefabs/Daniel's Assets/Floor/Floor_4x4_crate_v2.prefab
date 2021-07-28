@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1035122818551095889}
   - component: {fileID: 484324117398837011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor_4x4_crate_v2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366671822748645611}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.876696, y: -0.59514666, z: -18.120207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -56,9 +56,10 @@ GameObject:
   - component: {fileID: 5657651886852348169}
   - component: {fileID: 6762816493247949499}
   - component: {fileID: 4303713357127899560}
-  m_Layer: 0
+  - component: {fileID: 3092715107148152573}
+  m_Layer: 8
   m_Name: Floor_4x4_crate_v2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +125,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3092715107148152573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7821308728548291053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.5, z: 4}
+  m_Center: {x: -2, y: -0.25, z: -2}
