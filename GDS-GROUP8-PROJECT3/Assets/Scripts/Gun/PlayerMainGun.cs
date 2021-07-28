@@ -40,6 +40,7 @@ public class PlayerMainGun : MonoBehaviour
 
         PullObjectAmmo();
     }
+
     void Update()
     {
         Overheating();
