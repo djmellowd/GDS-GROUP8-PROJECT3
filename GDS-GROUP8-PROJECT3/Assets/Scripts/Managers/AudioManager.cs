@@ -2,25 +2,13 @@
 using System;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton
 {
     [SerializeField] AudioMixer mainMixer;
     public Sound[] sounds;
 
-    public static AudioManager AM;
-
     void Awake()
     {
-        if (AM == null)
-            AM = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);
-
         foreach (var s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
