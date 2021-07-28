@@ -7,9 +7,8 @@ public class movee : MonoBehaviour
 {
     private const string AudioShootingString = "Shooting";
 
-    [SerializeField] private PlayerBullet bullet;
-    [SerializeField] private GameObject hitPrefab;
-    [SerializeField] private int randomDmgMax;
+    [SerializeField] PlayerBullet bullet;
+    [SerializeField] GameObject hitPrefab;
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public Vector3 starPos;
 
@@ -49,8 +48,7 @@ public class movee : MonoBehaviour
         var enemy = other.gameObject.GetComponent<Health>();
         if (enemy != null && other.gameObject.tag != "Player")
         {
-            var random = Random.Range(0, randomDmgMax);
-            enemy.Damage(bullet.damage + random);
+            enemy.Damage(bullet.damage);
         }
         else
         {

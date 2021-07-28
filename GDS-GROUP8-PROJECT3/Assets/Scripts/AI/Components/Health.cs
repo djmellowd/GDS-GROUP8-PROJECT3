@@ -7,26 +7,17 @@ namespace BehaviorDesigner.Runtime.Tactical
     /// </summary>
     public class Health : MonoBehaviour, IDamageable
     {
-        private const string HIT_PLAYER_STRING = "HitPlayer";
-
         [SerializeField] private BasicData basicData;
         // The amount of health to begin with
         [Header("!Only For Player!")]
         [SerializeField] private HudManager hudManager;
-        [SerializeField] private PlayerMovement playerMovement;
         [HideInInspector]public float currentHealth;
-
-        private AudioManager audioManager;
 
         /// <summary>
         /// Initailzies the current health.
         /// </summary>
         private void Awake()
         {
-            if (hudManager != null)
-            {
-                audioManager =FindObjectOfType<AudioManager>();
-            }
             currentHealth = basicData.health;
         }
 
@@ -40,7 +31,6 @@ namespace BehaviorDesigner.Runtime.Tactical
 
             if (hudManager != null)
             {
-                audioManager.Play(HIT_PLAYER_STRING);
                 hudManager.RefreshHpPlayer(currentHealth);
             }
 

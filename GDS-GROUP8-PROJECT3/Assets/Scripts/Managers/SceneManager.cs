@@ -3,21 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : Singleton
+public class SceneManager : MonoBehaviour
 {
-    private static string MAIN_GAME_SCENE = "Level";
-    private static string GAME_OVER_SCENE = "GameOverScene";
+    private static SceneManager _instance;
+    private static string _mainGameText = "Main";
+    public static SceneManager Instance
+    {
+        get
+        {
+            if(_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<SceneManager>();
+            }
+
+            return _instance;
+        }
+    }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void GoToMainGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(MAIN_GAME_SCENE);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainGameText);
     }
-
-    public void GameOver()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(GAME_OVER_SCENE);
-    }
-
     public void ExitGame()
     {
         Application.Quit();
