@@ -39,7 +39,6 @@ public class HudManager : MonoBehaviour
         InitializationHealthPanel();
         InitializationOverheatPanel();
     }
-
     private void Update()
     {
         if (_playerCurrentHp != hpSlider.value)
