@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class DoorButton : MonoBehaviour
 {
-    [SerializeField] private Renderer mRenderer;
+    private const String DOOR_STRING = "Door";
+
     public bool openDoor;
+
+    [SerializeField] private Renderer mRenderer; 
     [SerializeField] private bool mainDoor;
     [SerializeField] private List<Renderer> parts;
     [SerializeField] private Objects seriaObject;
@@ -16,6 +19,8 @@ public class DoorButton : MonoBehaviour
 
     private void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+
         rangeToClick = seriaObject.rangeToClick;
     }
     private void OnMouseOver()
@@ -44,6 +49,7 @@ public class DoorButton : MonoBehaviour
             {
                 openDoor = false;
             }
+            audioManager.Play(DOOR_STRING);
         }
     }
 

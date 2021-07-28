@@ -6,7 +6,9 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-   [Header("Assingables")]
+    [HideInInspector] public AudioManager AudioManagerPlayer;
+
+    [Header("Assingables")]
     [SerializeField] private Transform playerCam;
     [SerializeField] private Transform orientation;
     
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
     private float threshold = 0.01f;
     [SerializeField] private float maxSlopeAngle = 35f;
 
-    private AudioManager audioManager;
+   
     private bool playerMove;
     private bool playerStopMove;
     private Vector3  currentPos;
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<AudioManager>();
+        AudioManagerPlayer = FindObjectOfType<AudioManager>();
     }
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -83,13 +85,13 @@ public class PlayerMovement : MonoBehaviour {
     {       
         if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.D))
         {
-            audioManager.StartLoop("PlayerMovement");
-            audioManager.Play("PlayerMovement");
+            AudioManagerPlayer.StartLoop("PlayerMovement");
+            AudioManagerPlayer.Play("PlayerMovement");
 
         }
         if (!playerMove)
         {
-            audioManager.StopLoop("PlayerMovement");
+            AudioManagerPlayer.StopLoop("PlayerMovement");
         }
 
     }
