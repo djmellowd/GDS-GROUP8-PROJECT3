@@ -5,15 +5,17 @@ using BehaviorDesigner.Runtime.Tactical;
 
 public class FirstAidKid : MonoBehaviour
 {
+    private const string FIRST_KID_STRING = "FirstKidPickUp";
 
     [SerializeField] private Objects scriptableObject;
     private const string NamePlayer = "Player";
 
-
     private int regen;
+    AudioManager audioManager;
 
     private void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         regen = scriptableObject.hpRegen;
     }
 
@@ -22,6 +24,7 @@ public class FirstAidKid : MonoBehaviour
         if (collision.gameObject.tag == NamePlayer)
         {
             var player = collision.gameObject.GetComponent<Health>();
+            audioManager.Play(FIRST_KID_STRING);
             PlayerInteraction(player);
         }
     }
