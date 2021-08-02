@@ -47,7 +47,6 @@ public class DoorButton : MonoBehaviour
         }
     }
 
-
     private void OnMouseExit()
     {
         mRenderer.material.color = Color.black;
