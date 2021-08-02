@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5195160019529402707}
   - component: {fileID: 3993591040708641923}
   - component: {fileID: 3487772617705892703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_4x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041789843416413767}
   m_LocalRotation: {x: 0.49999994, y: -0.50000006, z: 0.50000006, w: -0.49999997}
-  m_LocalPosition: {x: -0, y: -0.000000037718564, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5936280573843479532}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 3abc4645458092244a16b5c2fb311091, type: 3}
+  - {fileID: 1838567619780064569, guid: d2ca6ef9d3cac88488bf8d7a81c9e2a3, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,9 +89,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5936280573843479532}
   - component: {fileID: 877139377399412616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_4x4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6425008387910418774}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.28587, y: 3.2390723, z: -24.57925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
