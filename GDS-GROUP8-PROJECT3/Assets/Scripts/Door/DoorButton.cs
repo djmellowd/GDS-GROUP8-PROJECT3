@@ -5,28 +5,19 @@ using UnityEngine;
 
 public class DoorButton : MonoBehaviour
 {
-    private const string DOOR_BUTTON_STRING = "Door";
-
+    [SerializeField] private Renderer mRenderer;
     public bool openDoor;
-
-    [SerializeField] 
-    private Renderer mRenderer;    
-    [SerializeField] 
-    private bool mainDoor;
-    [SerializeField] 
-    private List<Renderer> parts;
-    [SerializeField] 
-    private Objects seriaObject;
+    [SerializeField] private bool mainDoor;
+    [SerializeField] private List<Renderer> parts;
+    [SerializeField] private Objects seriaObject;
 
     private AudioManager audioManager;
     private int rangeToClick;
 
     private void Awake()
     {
-        audioManager = FindObjectOfType<AudioManager>();
         rangeToClick = seriaObject.rangeToClick;
     }
-
     private void OnMouseOver()
     {
         if (Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) > rangeToClick)
@@ -53,9 +44,9 @@ public class DoorButton : MonoBehaviour
             {
                 openDoor = false;
             }
-            audioManager.Play(DOOR_BUTTON_STRING);
         }
     }
+
 
     private void OnMouseExit()
     {

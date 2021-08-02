@@ -48,8 +48,7 @@ public class movee : MonoBehaviour
         var enemy = other.gameObject.GetComponent<Health>();
         if (enemy != null && other.gameObject.tag != "Player")
         {
-            var damage = bullet.damage + Random.Range(0,6);
-            enemy.Damage(damage);
+            enemy.Damage(bullet.damage);
         }
         else
         {

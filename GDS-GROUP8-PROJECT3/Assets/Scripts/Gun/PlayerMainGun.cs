@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlayerMainGun : MonoBehaviour
 {
-    private const string OVERHEAT_STRING = "Overheat";
-
     [SerializeField]
     private Transform spawnPoint;
     [SerializeField]
@@ -21,26 +19,20 @@ public class PlayerMainGun : MonoBehaviour
     private GameObject ammoPreFab;
     [SerializeField]
     private GameObject muzzlePrefab;
-    [SerializeField]
-    private HudManager hudManager;
 
     private List<GameObject> ammoList = new List<GameObject>();
-    
+    private float timeToFire;
     private Vector3 destination;
     private int resetGun;
-    private bool playAudioOverheat = false;
-    private float timeToFire;
     private float normalGunFov;
     private float smoothFovTransition;
-    private AudioManager audioManager;
+
     void Awake()
     {
-        audioManager = FindObjectOfType<AudioManager>();
         normalGunFov = mainCamera.fieldOfView;
 
         PullObjectAmmo();
     }
-
     void Update()
     {
         Overheating();
@@ -74,26 +66,21 @@ public class PlayerMainGun : MonoBehaviour
     }
     private void Overheating()
     {
-        if (resetGun >= bullet.limitAmmo)
-        {
-            gunFragmentRender.materials[0].color = Color.red;
-            if (!playAudioOverheat)
-            {
-                audioManager.Play(OVERHEAT_STRING);
-                playAudioOverheat = true;
-            }
-
-            return;
-        }
         if (Input.GetMouseButton(0) && Time.time >= timeToFire)
         {
             timeToFire = Time.time + 1 / bullet.fireRate;
-            StopAllCoroutines();
-            resetGun += 1;
-            hudManager.RefreshOverheatPlayer(resetGun);
-            Shooting();
-            StartCoroutine(TimeBetweenShoots());
 
+            if (resetGun < bullet.limitAmmo)
+            {
+                StopAllCoroutines();
+                resetGun += 1;
+                Shooting();
+                StartCoroutine(TimeBetweenShoots());
+            }
+            else
+            {
+                gunFragmentRender.materials[0].color = Color.red;
+            }
         }
     }
 
@@ -102,9 +89,7 @@ public class PlayerMainGun : MonoBehaviour
     {
         yield return new WaitForSeconds(bullet.overheatingTime);
         gunFragmentRender.materials[0].color = Color.yellow;
-        playAudioOverheat = false;
         resetGun = 0;
-        hudManager.RefreshOverheatPlayer(0);
     }
 
     private void Shooting()
@@ -132,6 +117,5 @@ public class PlayerMainGun : MonoBehaviour
             }
         }
     }
-
 
 }
