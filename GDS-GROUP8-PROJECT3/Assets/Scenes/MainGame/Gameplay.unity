@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -439,12 +439,12 @@ PrefabInstance:
         type: 3}
       propertyPath: hpSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8989225741984338031}
     - target: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
         type: 3}
       propertyPath: overheatSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8989225741984338027}
     - target: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
         type: 3}
       propertyPath: damageIcons.Array.size
@@ -454,17 +454,17 @@ PrefabInstance:
         type: 3}
       propertyPath: damageIcons.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8989225741984338030}
     - target: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
         type: 3}
       propertyPath: damageIcons.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8989225741984338029}
     - target: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
         type: 3}
       propertyPath: damageIcons.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8989225741984338028}
     - target: {fileID: 8617409216080786031, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
         type: 3}
       propertyPath: m_RootOrder
@@ -567,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 8989225741229624763, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8989225741229624767, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
         type: 3}
@@ -676,3 +676,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0933fa14aaa95c42a62eaf6cc2a1676, type: 3}
+--- !u!114 &8989225741984338027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4875031572554371875, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+    type: 3}
+  m_PrefabInstance: {fileID: 8989225741984338026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8989225741984338028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1163454402, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+    type: 3}
+  m_PrefabInstance: {fileID: 8989225741984338026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8989225741984338029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 407113062, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+    type: 3}
+  m_PrefabInstance: {fileID: 8989225741984338026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8989225741984338030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2053203761, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+    type: 3}
+  m_PrefabInstance: {fileID: 8989225741984338026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8989225741984338031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6807396112695588164, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+    type: 3}
+  m_PrefabInstance: {fileID: 8989225741984338026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
