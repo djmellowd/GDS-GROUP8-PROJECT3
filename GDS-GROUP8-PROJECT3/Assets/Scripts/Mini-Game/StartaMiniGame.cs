@@ -59,6 +59,7 @@ public class StartaMiniGame : MonoBehaviour
         {
             if (!openDoor)
             {
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 GO.SetActive(true);
                 GO2.SetActive(true);
