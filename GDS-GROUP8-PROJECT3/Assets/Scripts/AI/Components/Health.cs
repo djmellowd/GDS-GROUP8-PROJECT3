@@ -33,6 +33,10 @@ namespace BehaviorDesigner.Runtime.Tactical
             {
                 hudManager.RefreshHpPlayer(currentHealth);
             }
+            else
+            {
+                hudManager.ChangeColorCrosshair();
+            }
 
             if (currentHealth == 0) {
                 gameObject.SetActive(false);
