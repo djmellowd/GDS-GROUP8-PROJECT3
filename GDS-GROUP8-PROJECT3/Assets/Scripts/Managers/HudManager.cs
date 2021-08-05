@@ -12,10 +12,14 @@ public class HudManager : MonoBehaviour
     [SerializeField]
     [Range(1, 10)]
     private int barsSpeed;
+    [SerializeField]
+    private Image crossHair;
 
     [Header("Player HP")]
     [SerializeField]
     private Slider hpSlider;
+    [SerializeField]
+    private Image hpImage;
     [SerializeField]
     private BasicData playerData;
 
@@ -47,7 +51,7 @@ public class HudManager : MonoBehaviour
         }
         if ((overheatSlider.maxValue - _playerCurrentOverheat) != overheatSlider.value)
         {
-            overheatSlider.value = Mathf.MoveTowards(overheatSlider.value,(overheatSlider.maxValue- _playerCurrentOverheat), barsSpeed * Time.deltaTime);
+            overheatSlider.value = Mathf.MoveTowards(overheatSlider.value, _playerCurrentOverheat, barsSpeed * Time.deltaTime);
         }
     }
 
@@ -63,19 +67,34 @@ public class HudManager : MonoBehaviour
         overheatSlider.value = overheatSlider.maxValue;
     }
 
+    public void ChangeColorCrosshair()
+    {
+        ChangeColor();
+    }
+
+   private IEnumerator ChangeColor()
+    {
+        crossHair.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        crossHair.color = Color.white;
+    }
+
     public void RefreshHpPlayer(float currentHp)
     {
         _playerCurrentHp = currentHp;
         if (currentHp <= 50 && currentHp > 25)
         {
             ActiveIcon(0);
+            hpImage.color = Color.green;
         }
         else if (currentHp <= 25 && currentHp > 5)
         {
             ActiveIcon(1);
+            hpImage.color = Color.yellow;
         }
         else if (currentHp <= 5)
         {
+            hpImage.color = Color.red;
             ActiveIcon(2);
         }
     }
