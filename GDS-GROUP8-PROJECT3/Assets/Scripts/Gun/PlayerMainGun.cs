@@ -79,12 +79,11 @@ public class PlayerMainGun : MonoBehaviour
                 resetGun += 1;
                 Shooting();
                 StartCoroutine(TimeBetweenShoots());
-                Debug.Log(bullet.limitAmmo - resetGun);
-                hudManager.RefreshOverheatPlayer(bullet.limitAmmo - resetGun);
+                hudManager.RefreshOverheatPlayer(resetGun);
             }
             else
             {
-                hudManager.RefreshOverheatPlayer(bullet.limitAmmo-1);
+                hudManager.RefreshOverheatPlayer(resetGun);
                 gunFragmentRender.materials[0].color = Color.red;
             }
         }
@@ -96,6 +95,7 @@ public class PlayerMainGun : MonoBehaviour
         yield return new WaitForSeconds(bullet.overheatingTime);
         gunFragmentRender.materials[0].color = Color.yellow;
         resetGun = 0;
+        hudManager.RefreshOverheatPlayer(resetGun);
     }
 
     private void Shooting()

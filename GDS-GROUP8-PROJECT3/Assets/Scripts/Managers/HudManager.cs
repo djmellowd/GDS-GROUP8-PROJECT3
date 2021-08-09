@@ -49,7 +49,7 @@ public class HudManager : MonoBehaviour
         {
             hpSlider.value = Mathf.MoveTowards(hpSlider.value, _playerCurrentHp, barsSpeed * Time.deltaTime);
         }
-        if ((overheatSlider.maxValue - _playerCurrentOverheat) != overheatSlider.value)
+        if (_playerCurrentOverheat != overheatSlider.value)
         {
             overheatSlider.value = Mathf.MoveTowards(overheatSlider.value, _playerCurrentOverheat, barsSpeed * Time.deltaTime);
         }
@@ -64,7 +64,7 @@ public class HudManager : MonoBehaviour
     private void InitializationOverheatPanel()
     {
         overheatSlider.maxValue = overheatData.limitAmmo;
-        overheatSlider.value = overheatSlider.maxValue;
+        overheatSlider.value = 0;
     }
 
     public void ChangeColorCrosshair()
