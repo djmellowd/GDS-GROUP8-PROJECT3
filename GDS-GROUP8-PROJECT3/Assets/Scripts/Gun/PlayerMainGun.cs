@@ -19,6 +19,8 @@ public class PlayerMainGun : MonoBehaviour
     private GameObject ammoPreFab;
     [SerializeField]
     private GameObject muzzlePrefab;
+    [SerializeField]
+    private HudManager hudManager;
 
     private List<GameObject> ammoList = new List<GameObject>();
     private float timeToFire;
@@ -77,9 +79,12 @@ public class PlayerMainGun : MonoBehaviour
                 resetGun += 1;
                 Shooting();
                 StartCoroutine(TimeBetweenShoots());
+                Debug.Log(bullet.limitAmmo - resetGun);
+                hudManager.RefreshOverheatPlayer(bullet.limitAmmo - resetGun);
             }
             else
             {
+                hudManager.RefreshOverheatPlayer(bullet.limitAmmo-1);
                 gunFragmentRender.materials[0].color = Color.red;
             }
         }
