@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5195160019529402707}
   - component: {fileID: 3993591040708641923}
   - component: {fileID: 3487772617705892703}
+  - component: {fileID: 2763528674827002423}
   m_Layer: 8
   m_Name: Wall_4x4
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2763528674827002423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041789843416413767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.16166496, z: 4}
+  m_Center: {x: -2, y: -0.08083248, z: -2}
 --- !u!1 &6425008387910418774
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5936280573843479532}
-  - component: {fileID: 877139377399412616}
   m_Layer: 8
   m_Name: Wall_4x4
   m_TagString: Ground
@@ -111,16 +124,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &877139377399412616
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6425008387910418774}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.0419283, y: 4.125209, z: 0.34703445}
-  m_Center: {x: -2.0031056, y: 2.0007195, z: 0.11925888}
