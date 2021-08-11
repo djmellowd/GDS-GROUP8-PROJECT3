@@ -69,7 +69,7 @@ public class HudManager : MonoBehaviour
 
     public void ChangeColorCrosshair()
     {
-        ChangeColor();
+     StartCoroutine(ChangeColor());
     }
 
    private IEnumerator ChangeColor()

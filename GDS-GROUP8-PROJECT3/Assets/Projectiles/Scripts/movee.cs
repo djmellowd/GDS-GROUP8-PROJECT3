@@ -9,6 +9,7 @@ public class movee : MonoBehaviour
 
     [SerializeField] PlayerBullet bullet;
     [SerializeField] GameObject hitPrefab;
+    [SerializeField] HudManager hudManager;
     [HideInInspector] public Vector3 direction;
     [HideInInspector] public Vector3 starPos;
 
@@ -17,6 +18,7 @@ public class movee : MonoBehaviour
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        hudManager = FindObjectOfType<HudManager>();
     }
 
     void OnEnable()
@@ -48,6 +50,7 @@ public class movee : MonoBehaviour
         var enemy = other.gameObject.GetComponent<Health>();
         if (enemy != null && other.gameObject.tag != "Player")
         {
+            hudManager.ChangeColorCrosshair();
             enemy.Damage(bullet.damage);
         }
         else
