@@ -7,76 +7,82 @@ public class AutomaticDoor : MonoBehaviour
 {
     [SerializeField] private Transform leftPart;
     [SerializeField] private Transform rightPart;
-    [SerializeField] private float deviation=0;
+    [SerializeField] private float deviation = 0;
     [SerializeField] private int speed;
+    [SerializeField] private Objects seriaObject;
+    [SerializeField] private bool rotateDoorY;
 
-    [Header("Otwieranie")] 
-    [SerializeField] private bool onTrigger;
-    [SerializeField] private bool OnButton;
-    [SerializeField] private DoorButton button;
-
-    private bool _closeDoor;
     private Vector3 _leftDir;
     private Vector3 _rightDir;
     private Vector3 _leftStart;
     private Vector3 _rightStart;
+
+    private int rangeToClick;
+    private bool doorIsOpen = false;
+
     private void Awake()
     {
         _leftStart = leftPart.position;
         _rightStart = rightPart.position;
-        
-        _leftDir = new Vector3(leftPart.position.x+deviation,leftPart.position.y,leftPart.position.z);
-        _rightDir = new Vector3(rightPart.position.x-deviation,rightPart.position.y,rightPart.position.z);
+
+        if (rotateDoorY)
+        {
+            _leftDir = new Vector3(leftPart.position.x, leftPart.position.y, leftPart.position.z - deviation);
+            _rightDir = new Vector3(rightPart.position.x, rightPart.position.y, rightPart.position.z + deviation);
+        }
+        else
+        {
+            _leftDir = new Vector3(leftPart.position.x + deviation, leftPart.position.y, leftPart.position.z);
+            _rightDir = new Vector3(rightPart.position.x - deviation, rightPart.position.y, rightPart.position.z);
+        }
+
+        rangeToClick = seriaObject.rangeToClick;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnMouseOver()
     {
-        if (onTrigger)
+        if (Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) > rangeToClick)
         {
-            if (other.tag == "Player")
-            {
-                _closeDoor = false;
-                OpenDoor();
-            }  
+            return;
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (onTrigger)
+
+        if (Input.GetKeyDown(seriaObject.button))
         {
-            if (other.tag == "Player")
+            if (doorIsOpen)
             {
-                _closeDoor = true;
-            } 
+                doorIsOpen = false;
+            }
+            else
+            {
+                doorIsOpen = true;
+            }
+
         }
     }
 
     private void Update()
     {
-        if (OnButton)
+        if (doorIsOpen)
         {
-            if (button.openDoor)
-            {
-                OpenDoor();
-            } 
+            OpenDoor();
         }
-        if (_closeDoor ||!button.openDoor)
+        else
         {
-           CloseDoor();
+            CloseDoor();
         }
     }
 
     private void OpenDoor()
     {
-        leftPart.position = Vector3.MoveTowards( leftPart.position,_leftDir,speed*Time.deltaTime);
-        rightPart.position = Vector3.MoveTowards(rightPart.position,_rightDir,speed*Time.deltaTime);
+        leftPart.position = Vector3.MoveTowards(leftPart.position, _leftDir, speed * Time.deltaTime);
+        rightPart.position = Vector3.MoveTowards(rightPart.position, _rightDir, speed * Time.deltaTime);
     }
 
     private void CloseDoor()
     {
         Vector3 currentPosLeft = leftPart.position;
         Vector3 currentPosRight = rightPart.position;
-        leftPart.position = Vector3.MoveTowards(currentPosLeft,_leftStart,speed*Time.deltaTime);
-        rightPart.position = Vector3.MoveTowards(currentPosRight,_rightStart,speed*Time.deltaTime);
+        leftPart.position = Vector3.MoveTowards(currentPosLeft, _leftStart, speed * Time.deltaTime);
+        rightPart.position = Vector3.MoveTowards(currentPosRight, _rightStart, speed * Time.deltaTime);
     }
 }
