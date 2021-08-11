@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &19017457 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8989225741229624763, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
-    type: 3}
-  m_PrefabInstance: {fileID: 8989225741984338026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &237505730
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +228,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &237505735
@@ -249,6 +243,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76481287fe4c034aaa1103d8848ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!1 &240353938
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +357,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &240353943
@@ -371,6 +372,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76481287fe4c034aaa1103d8848ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!1 &308167143
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +486,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &308167148
@@ -493,6 +501,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76481287fe4c034aaa1103d8848ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!1 &451825109
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +518,6 @@ GameObject:
   m_Component:
   - component: {fileID: 451825113}
   - component: {fileID: 451825112}
-  - component: {fileID: 451825111}
   - component: {fileID: 451825110}
   m_Layer: 9
   m_Name: Camera
@@ -543,14 +557,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &451825111
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 451825109}
-  m_Enabled: 1
 --- !u!20 &451825112
 Camera:
   m_ObjectHideFlags: 0
@@ -715,7 +721,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &513859313
@@ -730,6 +736,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76481287fe4c034aaa1103d8848ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!1 &539161713
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +810,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &539161715
@@ -855,7 +868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c9566271b0e8b45af62c31dd8ba99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 451825112}
 --- !u!1001 &692880078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1153,7 +1165,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1106982817
@@ -1186,6 +1198,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76481287fe4c034aaa1103d8848ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!114 &1323758831 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7104066326380038358, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
@@ -1264,7 +1283,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1431234231
@@ -1293,7 +1312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f88d3bb94508499710859fc31cce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName6: ScaryMazeReboot
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!65 &1431234233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1337,12 +1362,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1546727387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8989225741982494133, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+--- !u!114 &1546727389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8989225741982494091, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
     type: 3}
   m_PrefabInstance: {fileID: 8989225741984338026}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1614764858 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
@@ -1427,7 +1458,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1633402744
@@ -1469,6 +1500,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76481287fe4c034aaa1103d8848ae1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameras: []
+  GO: {fileID: 0}
+  GO2: {fileID: 0}
+  GO3: {fileID: 0}
+  GO4: {fileID: 0}
+  GO5: {fileID: 0}
+  GO6: {fileID: 0}
 --- !u!1001 &1700902427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1538,12 +1576,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b359155f3aaf0e14e9f78c75046c13a8, type: 3}
---- !u!20 &2104877298 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2562433061578829411, guid: f61cc3f87fdb63843b83ec0b34bb75a6,
-    type: 3}
-  m_PrefabInstance: {fileID: 692880078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &165503353808544627
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1659,20 +1691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff9d5e739f669345bc3b27b9f319d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRenderer: {fileID: 2715401356267755449}
-  openDoor: 0
-  mainDoor: 0
-  parts: []
-  seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
-  cameras:
-  - {fileID: 2104877298}
-  - {fileID: 451825112}
-  GO: {fileID: 1633402742}
-  GO2: {fileID: 1431234229}
-  GO3: {fileID: 1106982813}
-  GO4: {fileID: 539161713}
-  GO5: {fileID: 19017457}
-  GO6: {fileID: 1546727387}
 --- !u!1001 &8617409214468548948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1695,6 +1713,11 @@ PrefabInstance:
       propertyPath: hpSlider
       value: 
       objectReference: {fileID: 8989225741984338031}
+    - target: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
+        type: 3}
+      propertyPath: crossHair
+      value: 
+      objectReference: {fileID: 1546727389}
     - target: {fileID: 8617409216080786030, guid: 5ff962d54b8c39a48a4657e8e8eafb07,
         type: 3}
       propertyPath: overheatSlider
