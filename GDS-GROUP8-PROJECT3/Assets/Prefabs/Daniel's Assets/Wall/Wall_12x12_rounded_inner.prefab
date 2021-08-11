@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5905946338593623730}
   - component: {fileID: 3021618134877333166}
   - component: {fileID: 5194483759910985604}
+  - component: {fileID: 1180193968288973434}
   m_Layer: 0
   m_Name: Wall_12x12_rounded_inner
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1180193968288973434
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506353575858835855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4798377226116868833, guid: 5ca862eced43d26479f83ebe022ae595, type: 3}
 --- !u!1 &2658787802693783370
 GameObject:
   m_ObjectHideFlags: 0
