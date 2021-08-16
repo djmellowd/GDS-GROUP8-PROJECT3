@@ -31,7 +31,7 @@ namespace BehaviorDesigner.Runtime.Tactical
 
             if (hudManager != null)
             {
-                hudManager.RefreshHpPlayer(currentHealth);
+                hudManager.RefreshHpPlayer(amount, false);
             }
 
             if (currentHealth == 0) {
@@ -51,7 +51,7 @@ namespace BehaviorDesigner.Runtime.Tactical
             {
                 currentHealth = basicData.health;
             }
-            hudManager.RefreshHpPlayer(currentHealth);
+            hudManager.RefreshHpPlayer(hpToRegen, true);
         }
 
         /// <summary>

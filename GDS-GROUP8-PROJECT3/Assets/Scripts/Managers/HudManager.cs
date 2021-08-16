@@ -79,20 +79,32 @@ public class HudManager : MonoBehaviour
         crossHair.color = Color.white;
     }
 
-    public void RefreshHpPlayer(float currentHp)
+    public void RefreshHpPlayer(float value, bool isHeal)
     {
-        _playerCurrentHp = currentHp;
-        if (currentHp <= 50 && currentHp > 25)
+        float percentDmg = 0;
+        if (!isHeal)
+        {
+            percentDmg = (value * 100) / _playerCurrentHp;
+            _playerCurrentHp = -value;
+        }
+        else
+        {
+            var currentHpPercent = (_playerCurrentHp * 100) / playerData.health;
+            percentDmg = (value * 100) / currentHpPercent;
+            _playerCurrentHp = +value;
+        }
+
+        if (percentDmg <= 50 && percentDmg > 25)
         {
             ActiveIcon(0);
             hpImage.color = Color.green;
         }
-        else if (currentHp <= 25 && currentHp > 5)
+        else if (percentDmg <= 25 && percentDmg > 5)
         {
             ActiveIcon(1);
             hpImage.color = Color.yellow;
         }
-        else if (currentHp <= 5)
+        else if (percentDmg <= 5)
         {
             hpImage.color = Color.red;
             ActiveIcon(2);
