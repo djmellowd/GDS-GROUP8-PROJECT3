@@ -9,7 +9,6 @@ public class AutomaticDoor : MonoBehaviour
     [SerializeField] private Transform rightPart;
     [SerializeField] private float deviation = 0;
     [SerializeField] private int speed;
-    [SerializeField] private Objects seriaObject;
     [SerializeField] private bool rotateDoorY;
 
     private Vector3 _leftDir;
@@ -17,8 +16,7 @@ public class AutomaticDoor : MonoBehaviour
     private Vector3 _leftStart;
     private Vector3 _rightStart;
 
-    private int rangeToClick;
-    private bool doorIsOpen = false;
+    public bool DoorIsOpen = false;
 
     private void Awake()
     {
@@ -36,33 +34,11 @@ public class AutomaticDoor : MonoBehaviour
             _rightDir = new Vector3(rightPart.position.x - deviation, rightPart.position.y, rightPart.position.z);
         }
 
-        rangeToClick = seriaObject.rangeToClick;
-    }
-
-    private void OnMouseOver()
-    {
-        if (Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position) > rangeToClick)
-        {
-            return;
-        }
-
-        if (Input.GetKeyDown(seriaObject.button))
-        {
-            if (doorIsOpen)
-            {
-                doorIsOpen = false;
-            }
-            else
-            {
-                doorIsOpen = true;
-            }
-
-        }
     }
 
     private void Update()
     {
-        if (doorIsOpen)
+        if (DoorIsOpen)
         {
             OpenDoor();
         }
