@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.43412986, g: 0.47121954, b: 0.50810564, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &378968341
 Light:
   m_ObjectHideFlags: 0
@@ -9104,8 +9104,8 @@ MonoBehaviour:
   rightPart: {fileID: 965418050068404589}
   deviation: 2
   speed: 5
-  seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   rotateDoorY: 0
+  DoorIsOpen: 0
 --- !u!208 &966643919220117594
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -16566,6 +16566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToRotate: {fileID: 1773976202231552691}
+  Speed: 0
 --- !u!1 &1804616952523256937
 GameObject:
   m_ObjectHideFlags: 0
@@ -17973,8 +17974,8 @@ MonoBehaviour:
   rightPart: {fileID: 2008128047649111314}
   deviation: 2
   speed: 5
-  seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   rotateDoorY: 0
+  DoorIsOpen: 0
 --- !u!1 &2004682208997616610
 GameObject:
   m_ObjectHideFlags: 0
@@ -45468,8 +45469,8 @@ MonoBehaviour:
   rightPart: {fileID: 5164989227365849135}
   deviation: 2
   speed: 5
-  seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   rotateDoorY: 0
+  DoorIsOpen: 0
 --- !u!23 &5162725637686429374
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47330,6 +47331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToRotate: {fileID: 5475573867879818053}
+  Speed: 0
 --- !u!114 &5362508228032015714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47343,6 +47345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToRotate: {fileID: 5475573869094385250}
+  Speed: 0
 --- !u!4 &5368136355151770953
 Transform:
   m_ObjectHideFlags: 0
@@ -69648,8 +69651,8 @@ MonoBehaviour:
   rightPart: {fileID: 7819724857465146606}
   deviation: 2
   speed: 5
-  seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   rotateDoorY: 1
+  DoorIsOpen: 0
 --- !u!1 &7822554533358019720
 GameObject:
   m_ObjectHideFlags: 0
@@ -73170,6 +73173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToRotate: {fileID: 8220870999359085729}
+  Speed: 0
 --- !u!1 &8330397573023017216
 GameObject:
   m_ObjectHideFlags: 0
@@ -78367,8 +78371,8 @@ MonoBehaviour:
   rightPart: {fileID: 8953718122790767941}
   deviation: 2
   speed: 5
-  seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   rotateDoorY: 0
+  DoorIsOpen: 0
 --- !u!208 &8957114497624226272
 NavMeshObstacle:
   m_ObjectHideFlags: 0
