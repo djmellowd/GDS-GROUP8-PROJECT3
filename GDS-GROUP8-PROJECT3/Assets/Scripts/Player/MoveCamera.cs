@@ -3,6 +3,7 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour
 {
     private const string AmbientAudio = "Ambient";
+    private const string MusicLvlAudio = "MusicLvl";
 
     [SerializeField] private Transform player;
     AudioManager audioManager;
@@ -11,6 +12,7 @@ public class MoveCamera : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.Play(AmbientAudio);
+        audioManager.Play(MusicLvlAudio);
     }
 
     void Update()
