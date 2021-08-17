@@ -6,6 +6,7 @@ public class ActiveConsole : MonoBehaviour
 {
     [SerializeField] private Transform cameraPoint;
     [SerializeField] private Objects seriaObject;
+    [SerializeField] private int miniGameLvl;
 
     [SerializeField] private float speed;
     private GameContoller gameContoller;
@@ -48,7 +49,7 @@ public class ActiveConsole : MonoBehaviour
     private void ActiveGame()
     {
         isOnConsole = false;
-        gameContoller.MiniGameCanvas.gameObject.SetActive(false);
+        gameContoller.MiniGameCanvas[miniGameLvl].gameObject.SetActive(false);
         gameContoller.MainCanvas.gameObject.SetActive(true);
         gameContoller.Player.SetActive(true);
         gameContoller.PlayerGun.SetActive(true);
@@ -68,7 +69,7 @@ public class ActiveConsole : MonoBehaviour
         }
         else if (isOnConsole)
         {
-            gameContoller.MiniGameCanvas.gameObject.SetActive(true);
+            gameContoller.MiniGameCanvas[miniGameLvl].gameObject.SetActive(true);
             if (Input.GetKeyDown(seriaObject.button))
             {
                 ActiveGame();

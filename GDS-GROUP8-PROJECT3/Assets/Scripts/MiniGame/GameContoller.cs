@@ -11,6 +11,6 @@ public class GameContoller : Singleton
 
     public Camera MainCamera;  
     public Canvas MainCanvas;
-    public Canvas MiniGameCanvas;
+    public List<Canvas> MiniGameCanvas;
 
 }

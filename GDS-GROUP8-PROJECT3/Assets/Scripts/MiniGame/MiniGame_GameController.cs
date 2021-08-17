@@ -14,7 +14,7 @@ public class MiniGame_GameController : MonoBehaviour
     Transform nextPoint;
 
     private void Awake()
-    {     
+    {
         currentPoint = checkPoints[currentCheckPoint];
         nextPoint = checkPoints[currentCheckPoint + 1];
         StartGame();
@@ -38,17 +38,17 @@ public class MiniGame_GameController : MonoBehaviour
             lineRenderer[i].positionCount = 1;
             lineRenderer[i].SetPosition(0, checkPoints[i].position);
         }
-        
+
     }
 
     private void GoToNextPoint()
     {
-       
+
         currentCheckPoint++;
-        
+
         player.transform.position = nextPoint.position;
         SetUpLine();
-        if (checkPoints.Length <= currentCheckPoint+1)
+        if (checkPoints.Length <= currentCheckPoint + 1)
         {
             currentPoint = checkPoints[currentCheckPoint];
             Debug.Log("YOU WIN!");
@@ -60,30 +60,30 @@ public class MiniGame_GameController : MonoBehaviour
     }
 
     private void RefreshPoints()
-    {      
+    {
         currentPoint = checkPoints[currentCheckPoint];
         nextPoint = checkPoints[currentCheckPoint + 1];
     }
 
     public void SetUpLine()
     {
-        lineRenderer[currentCheckPoint-1].positionCount++;
-        lineRenderer[currentCheckPoint-1].SetPosition(1, player.transform.position);
+        lineRenderer[currentCheckPoint - 1].positionCount++;
+        lineRenderer[currentCheckPoint - 1].SetPosition(1, player.transform.position);
     }
 
     private void CheckNextPointLocation()
     {
 
- /*      if (player.transform.position != currentPoint.position)
-        {
-            player.transform.position = Vector3.Lerp(player.transform.position, currentPoint.position, speedPlayer * Time.deltaTime);
-            return;
-        }
- */
+        /*      if (player.transform.position != currentPoint.position)
+               {
+                   player.transform.position = Vector3.Lerp(player.transform.position, currentPoint.position, speedPlayer * Time.deltaTime);
+                   return;
+               }
+        */
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (Mathf.Round(currentPoint.position.x) == Mathf.Round(nextPoint.position.x) && currentPoint.position.y < nextPoint.position.y)
+            if (Mathf.Round(currentPoint.localPosition.x) == Mathf.Round(nextPoint.localPosition.x) && currentPoint.localPosition.y < nextPoint.localPosition.y)
             {
                 GoToNextPoint();
             }
@@ -94,7 +94,7 @@ public class MiniGame_GameController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            if (Mathf.Round(currentPoint.position.x) == Mathf.Round(nextPoint.position.x) && currentPoint.position.y > nextPoint.position.y)
+            if (currentPoint.localPosition.x == nextPoint.localPosition.x && currentPoint.localPosition.y > nextPoint.localPosition.y)
             {
                 GoToNextPoint();
             }
@@ -105,7 +105,7 @@ public class MiniGame_GameController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            if (Mathf.Round(currentPoint.position.x) == Mathf.Round(nextPoint.position.x) && currentPoint.position.x < nextPoint.position.x)
+            if (currentPoint.localPosition.y == nextPoint.localPosition.y && currentPoint.localPosition.x > nextPoint.localPosition.x)
             {
                 GoToNextPoint();
             }
@@ -116,7 +116,7 @@ public class MiniGame_GameController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            if (Mathf.Round(currentPoint.position.y) == Mathf.Round(nextPoint.position.y)&& currentPoint.position.x > nextPoint.position.x)
+            if (currentPoint.localPosition.y == nextPoint.localPosition.y && currentPoint.localPosition.x < nextPoint.localPosition.x)
             {
                 GoToNextPoint();
             }
@@ -124,6 +124,6 @@ public class MiniGame_GameController : MonoBehaviour
             {
                 StartGame();
             }
-        }       
+        }
     }
 }

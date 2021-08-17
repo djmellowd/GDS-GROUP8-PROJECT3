@@ -84,27 +84,25 @@ public class HudManager : MonoBehaviour
         float percentDmg = 0;
         if (!isHeal)
         {
-            percentDmg = (value * 100) / _playerCurrentHp;
             _playerCurrentHp = -value;
         }
         else
         {
-            var currentHpPercent = (_playerCurrentHp * 100) / playerData.health;
-            percentDmg = (value * 100) / currentHpPercent;
             _playerCurrentHp = +value;
         }
 
-        if (percentDmg <= 50 && percentDmg > 25)
+
+        if (_playerCurrentHp <= 50 && percentDmg > 25)
         {
             ActiveIcon(0);
             hpImage.color = Color.green;
         }
-        else if (percentDmg <= 25 && percentDmg > 5)
+        else if (_playerCurrentHp <= 25 && percentDmg > 5)
         {
             ActiveIcon(1);
             hpImage.color = Color.yellow;
         }
-        else if (percentDmg <= 5)
+        else if (_playerCurrentHp <= 5)
         {
             hpImage.color = Color.red;
             ActiveIcon(2);
