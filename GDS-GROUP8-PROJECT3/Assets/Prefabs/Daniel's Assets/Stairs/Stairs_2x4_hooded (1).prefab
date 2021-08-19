@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 8244563197714809681}
   - component: {fileID: 6371291918580169652}
   - component: {fileID: 7607008704568350260}
+  - component: {fileID: 8733955797545673080}
   m_Layer: 8
   m_Name: Stairs_2x4_hooded (1)
   m_TagString: Ground
@@ -125,6 +126,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8733955797545673080
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800386053269026146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8926319395846844693, guid: 7d7d5186482e9714596bf077445a9bfd, type: 3}
 --- !u!1 &7212828780257430867
 GameObject:
   m_ObjectHideFlags: 0
