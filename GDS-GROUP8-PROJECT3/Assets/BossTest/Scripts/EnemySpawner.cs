@@ -143,7 +143,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 ChooseRandomPositionOnNavMesh()
     {
-        int VertexIndex = 10;
+        int VertexIndex = 8;
         return Triangulation.vertices[VertexIndex];
     }
 
