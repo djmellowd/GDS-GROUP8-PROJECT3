@@ -2598,6 +2598,7 @@ GameObject:
   - component: {fileID: 1002975557820454396}
   - component: {fileID: 1002975557820454399}
   - component: {fileID: -7999956828344115882}
+  - component: {fileID: 2958466214747769990}
   - component: {fileID: 8661544556610260784}
   m_Layer: 10
   m_Name: Basic Enemy
@@ -2757,6 +2758,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cb3968c8db747104087fab1ba54f5623, type: 2}
   - {fileID: 11400000, guid: 5daf75c110f4d254483578e225453583, type: 2}
   - {fileID: 11400000, guid: 94c7dd9f64f6ad944acfbdea4ae399ed, type: 2}
+--- !u!114 &2958466214747769990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002975557820454398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f61098c50242b47a1bf14d304ba3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicData: {fileID: 11400000, guid: 1fb290379efb7e54c958844283118300, type: 2}
+  hudManager: {fileID: 0}
+  currentHealth: 0
 --- !u!54 &8661544556610260784
 Rigidbody:
   m_ObjectHideFlags: 0
