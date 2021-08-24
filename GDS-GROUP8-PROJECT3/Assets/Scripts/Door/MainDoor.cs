@@ -9,24 +9,25 @@ public class MainDoor : MonoBehaviour
     [SerializeField] private float deviation = 0;
     [SerializeField] private int speed;
 
-    [Header("Otwieranie")] [SerializeField]
-    private DoorButton button1;
+    [Header("Otwieranie")] 
+    [SerializeField] private bool button1;
+    [SerializeField] private bool button2;
+    [SerializeField] private bool button3;
 
-    [SerializeField] private DoorButton button2;
-    [SerializeField] private DoorButton button3;
-
-    private bool _closeDoor;
     private Vector3 _leftDir;
     private Vector3 _rightDir;
+    private GameContoller gameContoller;
 
     private void Awake()
     {
-        _leftDir = new Vector3(leftPart.position.x , leftPart.position.y, leftPart.position.z+ deviation);
-        _rightDir = new Vector3(rightPart.position.x, rightPart.position.y , rightPart.position.z- deviation);
+        gameContoller = FindObjectOfType<GameContoller>();
+
+        _leftDir = new Vector3(leftPart.position.x - deviation, leftPart.position.y, leftPart.position.z);
+        _rightDir = new Vector3(rightPart.position.x + deviation, rightPart.position.y , rightPart.position.z);      
     }
     private void Update()
     {
-        if (button1.openDoor && button2.openDoor && button3.openDoor)
+        if (gameContoller.MiniGameControler[0].UnlockWin && gameContoller.MiniGameControler[1] && gameContoller.MiniGameControler[2])
         {
             OpenDoor();
         }

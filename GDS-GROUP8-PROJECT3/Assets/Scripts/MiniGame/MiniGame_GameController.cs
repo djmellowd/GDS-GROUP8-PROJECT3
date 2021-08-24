@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class MiniGame_GameController : MonoBehaviour
 {
+    public bool UnlockWin => unlockWin;
+
     [SerializeField] private GameObject player;
     [SerializeField] private Transform[] checkPoints;
     [SerializeField] private float speedPlayer;
     [SerializeField] private LineRenderer[] lineRenderer;
 
     private int currentCheckPoint = 0;
-    Transform currentPoint;
-    Transform nextPoint;
+    private Transform currentPoint;
+    private Transform nextPoint;
+
+    private bool unlockWin = false;
 
     private void Awake()
     {
@@ -23,12 +27,10 @@ public class MiniGame_GameController : MonoBehaviour
     void Update()
     {
         CheckNextPointLocation();
-
     }
 
     private void StartGame()
     {
-        Debug.Log("GAME START!");
         currentCheckPoint = 0;
         RefreshPoints();
         player.transform.position = checkPoints[0].position;
@@ -51,7 +53,7 @@ public class MiniGame_GameController : MonoBehaviour
         if (checkPoints.Length <= currentCheckPoint + 1)
         {
             currentPoint = checkPoints[currentCheckPoint];
-            Debug.Log("YOU WIN!");
+            unlockWin = true;
         }
         else
         {
