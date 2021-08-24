@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 2562433062737686203}
   - component: {fileID: 9013063044024528593}
   - component: {fileID: 547146561300071579}
+  - component: {fileID: 5326729435208059790}
   - component: {fileID: 2562433062737686200}
   - component: {fileID: 1414711881}
   m_Layer: 0
@@ -355,13 +356,28 @@ MonoBehaviour:
   rb: {fileID: 1414711881}
   sensitivity: 50
   moveSpeed: 6000
-  maxSpeed: 5
+  maxSpeed: 8
   grounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
   counterMovement: 0.175
   maxSlopeAngle: 35
+--- !u!114 &5326729435208059790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562433062737686201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ac639c49aaf4f478491b7cb9f343dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRadius: {fileID: 0}
+  Animator: {fileID: 0}
+  Health: 300
 --- !u!114 &2562433062737686200
 MonoBehaviour:
   m_ObjectHideFlags: 0
