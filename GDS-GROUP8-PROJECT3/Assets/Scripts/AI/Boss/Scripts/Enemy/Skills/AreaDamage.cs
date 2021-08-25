@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using BehaviorDesigner.Runtime.Tactical;
 using UnityEngine;
 
 public class AreaDamage : MonoBehaviour
@@ -16,6 +17,19 @@ public class AreaDamage : MonoBehaviour
             {
                 this.Damageable = damageable;
                 StartCoroutine(DealDamage());
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            IDamageable damageable;
+            if ((damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable) != null)
+            {
+                damageable.Damage(Damage);
+                Destroy(gameObject);
             }
         }
     }
@@ -38,7 +52,7 @@ public class AreaDamage : MonoBehaviour
 
         while (Damageable != null)
         {
-            Damageable.TakeDamage(Damage);
+            Damageable.Damage(Damage);
             yield return Wait;
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,7 +24,7 @@ public class JumpSkill : SkillScriptableObject
         return Instance;
     }
 
-    public override bool CanUseSkill(Enemy Enemy, Player Player, int Level)
+    public override bool CanUseSkill(Enemy Enemy, Health Player, int Level)
     {
         if (base.CanUseSkill(Enemy, Player, Level))
         {
@@ -36,13 +37,13 @@ public class JumpSkill : SkillScriptableObject
         return false;
     }
 
-    public override void UseSkill(Enemy Enemy, Player Player)
+    public override void UseSkill(Enemy Enemy, Health Player)
     {
         base.UseSkill(Enemy, Player);
         Enemy.StartCoroutine(Jump(Enemy, Player));
     }
 
-    private IEnumerator Jump(Enemy Enemy, Player Player)
+    private IEnumerator Jump(Enemy Enemy, Health Player)
     {
         DisableEnemyMovement(Enemy);
         Enemy.Movement.State = EnemyState.UsingAbility;

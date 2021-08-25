@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : PoolableObject
@@ -35,7 +36,7 @@ public class Bullet : PoolableObject
 
         if (other.TryGetComponent<IDamageable>(out damageable))
         {
-            damageable.TakeDamage(Damage);
+            damageable.Damage(Damage);
         }
 
         Disable();

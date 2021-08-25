@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Poison Gas Skill", menuName = "ScriptableObject/Skills/Poison Gas")]
@@ -22,19 +23,19 @@ public class PoisonGasSkill : SkillScriptableObject
         return scaledSkill;
     }
 
-    public override bool CanUseSkill(Enemy Enemy, Player Player, int Level)
+    public override bool CanUseSkill(Enemy Enemy, Health Player, int Level)
     {
         return base.CanUseSkill(Enemy, Player, Level)
             && Vector3.Distance(Enemy.transform.position, Player.transform.position) <= Range;
     }
 
-    public override void UseSkill(Enemy Enemy, Player Player)
+    public override void UseSkill(Enemy Enemy, Health Player)
     {
         base.UseSkill(Enemy, Player);
         Enemy.StartCoroutine(SpawnPoisonGas(Enemy, Player));
     }
 
-    private IEnumerator SpawnPoisonGas(Enemy Enemy, Player Player)
+    private IEnumerator SpawnPoisonGas(Enemy Enemy, Health Player)
     {
         ObjectPool pool = ObjectPool.CreateInstance(Prefab, 5);
 

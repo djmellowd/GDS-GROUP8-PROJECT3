@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : PoolableObject, IDamageable
+public class Enemy : PoolableObject
 {
     public AttackRadius AttackRadius;
-    public Player Player;
+    public Health Player;
     public int Level;
     public Animator Animator;
     public EnemyMovement Movement;
@@ -86,4 +87,5 @@ public class Enemy : PoolableObject, IDamageable
     {
         return transform;
     }
+
 }

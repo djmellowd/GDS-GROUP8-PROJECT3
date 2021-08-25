@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -57,12 +58,12 @@ public class EnemyMovement : MonoBehaviour
         OnStateChange += HandleStateChange;
     }
 
-    private void HandleGainSight(Player player)
+    private void HandleGainSight(Health player)
     {
         State = EnemyState.Chase;
     }
 
-    private void HandleLoseSight(Player player)
+    private void HandleLoseSight(Health player)
     {
         State = DefaultState;
     }

@@ -1,4 +1,6 @@
-﻿namespace BehaviorDesigner.Runtime.Tactical
+﻿using UnityEngine;
+
+namespace BehaviorDesigner.Runtime.Tactical
 {
     /// <summary>
     /// Interface for objects that can take damage.
@@ -16,5 +18,6 @@
         /// </summary>
         /// <returns>True if the object is alive.</returns>
         bool IsAlive();
+        Transform GetTransform();
     }
 }

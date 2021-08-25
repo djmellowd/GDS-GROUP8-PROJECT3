@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
@@ -10,7 +11,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>() != null && LoadLevelOperation == null)
+        if (other.GetComponent<Health>() != null && LoadLevelOperation == null)
         {
             LoadLevelOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(SceneName, LoadSceneMode.Additive);
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Fire Breath Skill", menuName = "ScriptableObject/Skills/Fire Breath")]
@@ -21,18 +22,18 @@ public class FireBreathSkill : SkillScriptableObject
         return scaledSkill;
     }
 
-    public override bool CanUseSkill(Enemy Enemy, Player Player, int Level)
+    public override bool CanUseSkill(Enemy Enemy, Health Player, int Level)
     {
         return base.CanUseSkill(Enemy, Player, Level) && Vector3.Distance(Enemy.transform.position, Player.transform.position) <= Range;
     }
 
-    public override void UseSkill(Enemy Enemy, Player Player)
+    public override void UseSkill(Enemy Enemy, Health Player)
     {
         base.UseSkill(Enemy, Player);
         Enemy.StartCoroutine(BreatheFire(Enemy, Player));
     }
 
-    private IEnumerator BreatheFire(Enemy Enemy, Player Player)
+    private IEnumerator BreatheFire(Enemy Enemy, Health Player)
     {
         Enemy.Animator.SetBool(EnemyMovement.IsWalking, false);
 

@@ -62,5 +62,10 @@ namespace BehaviorDesigner.Runtime.Tactical
             currentHealth = basicData.health;
             gameObject.SetActive(true);
         }
+
+        public Transform GetTransform()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using UnityEngine;
 
 public class SkillScriptableObject : ScriptableObject
 {
@@ -28,12 +29,12 @@ public class SkillScriptableObject : ScriptableObject
         Instance.UnlockLevel = UnlockLevel;
     }
 
-    public virtual void UseSkill(Enemy Enemy, Player Player)
+    public virtual void UseSkill(Enemy Enemy, Health Player)
     {
         IsActivating = true;
     }
 
-    public virtual bool CanUseSkill(Enemy Enemy, Player Player, int Level)
+    public virtual bool CanUseSkill(Enemy Enemy, Health Player, int Level)
     {
         return !IsActivating
             && Level >= UnlockLevel

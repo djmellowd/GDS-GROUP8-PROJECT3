@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -72,7 +73,7 @@ public class AttackRadius : MonoBehaviour
             if (closestDamageable != null)
             {
                 OnAttack?.Invoke(closestDamageable);
-                closestDamageable.TakeDamage(Damage);
+                closestDamageable.Damage(Damage);
             }
 
             closestDamageable = null;

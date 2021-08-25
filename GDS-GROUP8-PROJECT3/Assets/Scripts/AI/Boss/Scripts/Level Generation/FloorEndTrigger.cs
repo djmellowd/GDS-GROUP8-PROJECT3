@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using UnityEngine;
 
 public class FloorEndTrigger : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class FloorEndTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>() != null)
+        if (other.GetComponent<Health>() != null)
         {
             if (IsEnd)
             {

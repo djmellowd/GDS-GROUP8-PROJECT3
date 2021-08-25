@@ -3,13 +3,14 @@ using NavMeshBuilder = UnityEngine.AI.NavMeshBuilder;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
+using BehaviorDesigner.Runtime.Tactical;
 
 public class AreaFloorBaker : MonoBehaviour
 {
     [SerializeField]
     private NavMeshSurface[] Surfaces;
     [SerializeField]
-    private Player Player;
+    private Health Player;
     [SerializeField]
     private float UpdateRate = 0.1f;
     [SerializeField]

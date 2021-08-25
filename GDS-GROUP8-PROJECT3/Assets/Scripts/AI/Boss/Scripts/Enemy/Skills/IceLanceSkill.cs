@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Ice Lance Skill", menuName = "ScriptableObject/Skills/Ice Lance")]
@@ -30,7 +31,7 @@ public class IceLanceSkill : SkillScriptableObject
         return scaledUpSkill;
     }
 
-    public override bool CanUseSkill(Enemy Enemy, Player Player, int Level)
+    public override bool CanUseSkill(Enemy Enemy, Health Player, int Level)
     {
         return base.CanUseSkill(Enemy, Player, Level)
             && Vector3.Distance(Player.transform.position, Enemy.transform.position) <= Range
@@ -58,14 +59,14 @@ public class IceLanceSkill : SkillScriptableObject
         return false;
     }
 
-    public override void UseSkill(Enemy Enemy, Player Player)
+    public override void UseSkill(Enemy Enemy, Health Player)
     {
         base.UseSkill(Enemy, Player);
 
         Enemy.StartCoroutine(ShootIceLances(Enemy, Player));
     }
 
-    private IEnumerator ShootIceLances(Enemy Enemy, Player Player)
+    private IEnumerator ShootIceLances(Enemy Enemy, Health Player)
     {
         WaitForSeconds Wait = new WaitForSeconds(Delay);
 
@@ -80,7 +81,7 @@ public class IceLanceSkill : SkillScriptableObject
         IsActivating = false;
     }
 
-    private void ShootIceLance(Enemy Enemy, Player Player)
+    private void ShootIceLance(Enemy Enemy, Health Player)
     {
         ObjectPool pool = ObjectPool.CreateInstance(Prefab, 5);
 

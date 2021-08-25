@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Player Player;
+    public Health Player;
     public int NumberOfEnemiesToSpawn = 5;
     public float SpawnDelay = 1f;
     public List<WeightedSpawnScriptableObject> WeightedEnemies = new List<WeightedSpawnScriptableObject>();
