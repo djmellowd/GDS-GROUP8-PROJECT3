@@ -16,7 +16,7 @@ public class ActiveConsole : MonoBehaviour
     private Transform startPosCamera = null;
     private bool isOnConsole=false;
 
-    private void Awake()
+    private void Start()
     {    
         gameContoller = FindObjectOfType<GameContoller>();
         playerCam = gameContoller.MainCamera;

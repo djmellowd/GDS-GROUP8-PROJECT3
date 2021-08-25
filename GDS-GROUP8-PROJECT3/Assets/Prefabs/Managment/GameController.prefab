@@ -43,7 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a12fd1616fa90f479f67eb28c93d167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Plyaer: {fileID: 0}
+  Player: {fileID: 0}
+  PlayerHealth: {fileID: 0}
+  HeadPlayer: {fileID: 0}
+  PlayerGun: {fileID: 0}
   MainCamera: {fileID: 0}
   MainCanvas: {fileID: 0}
-  MiniGameCanvas: {fileID: 0}
+  MiniGameCanvas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  MiniGameControler:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
