@@ -81,7 +81,6 @@ public class HudManager : MonoBehaviour
 
     public void RefreshHpPlayer(float value, bool isHeal)
     {
-        float percentDmg = 0;
         if (!isHeal)
         {
             _playerCurrentHp -= value;
