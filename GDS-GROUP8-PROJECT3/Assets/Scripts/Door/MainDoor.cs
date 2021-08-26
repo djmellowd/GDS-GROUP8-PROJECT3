@@ -21,11 +21,6 @@ public class MainDoor : MonoBehaviour
         _rightDir = new Vector3(rightPart.position.x + deviation, rightPart.position.y , rightPart.position.z);      
     }
 
-    private void Start()
-    {
-        gameContoller = FindObjectOfType<GameContoller>();
-    }
-
     private void Update()
     {
         if (gameContoller.MiniGameControler[0].UnlockWin && gameContoller.MiniGameControler[1] && gameContoller.MiniGameControler[2])
