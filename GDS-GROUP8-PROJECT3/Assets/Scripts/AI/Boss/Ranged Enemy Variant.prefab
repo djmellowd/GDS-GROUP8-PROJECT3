@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 8278091354910090501}
-  Damage: 10
+  Damage: 1
   AttackDelay: 0.5
   Agent: {fileID: 1676608866420508646}
   BulletPrefab: {fileID: 6105353496410510730, guid: f7e60e6b8b768944487dadaddb2fabf4,
@@ -108,6 +108,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1002975557028358203, guid: 2350c8b2602580b4ba884ac3f50daf7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002975557044584069, guid: 2350c8b2602580b4ba884ac3f50daf7c,
         type: 3}
       propertyPath: m_Layer
@@ -182,6 +187,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002975557171229399, guid: 2350c8b2602580b4ba884ac3f50daf7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1002975557179770296, guid: 2350c8b2602580b4ba884ac3f50daf7c,
         type: 3}
@@ -642,6 +652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002975557932618328, guid: 2350c8b2602580b4ba884ac3f50daf7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1002975557942980842, guid: 2350c8b2602580b4ba884ac3f50daf7c,
         type: 3}
@@ -1173,8 +1188,7 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5383216343437293354, guid: 2350c8b2602580b4ba884ac3f50daf7c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2350c8b2602580b4ba884ac3f50daf7c, type: 3}
 --- !u!195 &1676608866420508646 stripped
 NavMeshAgent:
