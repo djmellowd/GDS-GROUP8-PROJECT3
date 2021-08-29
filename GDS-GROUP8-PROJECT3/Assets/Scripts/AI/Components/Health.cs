@@ -12,6 +12,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         [Header("!Only For Player!")]
         [SerializeField] private HudManager hudManager;
         [HideInInspector]public float currentHealth;
+        [HideInInspector] public float MaxHealth;
 
         /// <summary>
         /// Initailzies the current health.
@@ -19,6 +20,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         private void Awake()
         {
             currentHealth = basicData.health;
+            MaxHealth = currentHealth;
         }
 
         /// <summary>
