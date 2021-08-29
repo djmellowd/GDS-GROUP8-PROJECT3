@@ -60,6 +60,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// <param name="targetPosition">The position to attack.</param>
         public void Attack(Vector3 targetPosition)
         {
+            transform.position = new Vector3(transform.position.x, transform.position.y+0.1f, transform.position.z);
             GameObject.Instantiate(bullet, transform.position, Quaternion.LookRotation(targetPosition - transform.position));
             lastAttackTime = Time.time;
         }
