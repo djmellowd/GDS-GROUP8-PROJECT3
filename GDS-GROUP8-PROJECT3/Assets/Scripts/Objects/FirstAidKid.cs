@@ -21,6 +21,11 @@ public class FirstAidKid : MonoBehaviour
     {
         if (collision.gameObject.tag == NamePlayer)
         {
+            var playerHealth = collision.gameObject.GetComponent<Health>();
+            if (playerHealth.currentHealth == playerHealth.MaxHealth)
+            {
+                return;
+            }
             var player = collision.gameObject.GetComponent<Health>();
             PlayerInteraction(player);
         }
