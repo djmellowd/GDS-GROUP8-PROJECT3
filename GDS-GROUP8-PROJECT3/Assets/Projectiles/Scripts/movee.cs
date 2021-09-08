@@ -55,21 +55,7 @@ public class movee : MonoBehaviour
         }
         else
         {
-            ContactPoint contact = other.contacts[0];
-            Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-            Vector3 pos = contact.point;
-
-            var hitVFX = Instantiate(hitPrefab, pos, rot);
-            var psHit = hitVFX.GetComponent<ParticleSystem>();
-            if (psHit != null)
-            {
-                Destroy(hitVFX, psHit.main.duration);
-            }
-            else
-            {
-                var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
-                Destroy(hitVFX, psChild.main.duration);
-            }
+           
         }
         gameObject.SetActive(false);
     }
