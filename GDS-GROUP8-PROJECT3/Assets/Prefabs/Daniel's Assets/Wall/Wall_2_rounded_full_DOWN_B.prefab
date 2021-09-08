@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9221794692045300489}
-  - component: {fileID: 2982817430552859819}
   m_Layer: 0
   m_Name: Wall_2_rounded_full_DOWN_B
   m_TagString: Untagged
@@ -32,19 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2982817430552859819
-BoxCollider:
+--- !u!64 &2069566351698230376
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689665636653437844}
+  m_GameObject: {fileID: 2160998844331998180}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.4998207, y: 2.0622506, z: 4.0949516}
-  m_Center: {x: -1.7499104, y: 0.9782746, z: -2.037344}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1122700517948584643, guid: 74d82dd3e9017aa44bc35b890f429338, type: 3}
 --- !u!1001 &1241868895275255477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +114,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74d82dd3e9017aa44bc35b890f429338, type: 3}
+--- !u!1 &2160998844331998180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74d82dd3e9017aa44bc35b890f429338,
+    type: 3}
+  m_PrefabInstance: {fileID: 1241868895275255477}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1636698182404563294 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 74d82dd3e9017aa44bc35b890f429338,
