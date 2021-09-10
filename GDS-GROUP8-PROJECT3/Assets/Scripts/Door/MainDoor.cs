@@ -15,10 +15,13 @@ public class MainDoor : MonoBehaviour
 
     private void Awake()
     {
-        gameContoller = FindObjectOfType<GameContoller>();
-
         _leftDir = new Vector3(leftPart.position.x - deviation, leftPart.position.y, leftPart.position.z);
         _rightDir = new Vector3(rightPart.position.x + deviation, rightPart.position.y , rightPart.position.z);      
+    }
+
+    private void Start()
+    {
+        gameContoller = FindObjectOfType<GameContoller>();
     }
 
     private void Update()
