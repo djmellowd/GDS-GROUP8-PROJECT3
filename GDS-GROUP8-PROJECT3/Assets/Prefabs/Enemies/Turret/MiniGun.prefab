@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &1299304888622524358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395362389180442653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43661124, y: 1.1658283, z: 0.4366113}
+  m_Center: {x: -0.000000022351742, y: 0.47454935, z: -0.00000008940697}
+--- !u!1 &3163762529544145903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276806489741261136}
+  m_Layer: 12
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276806489741261136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163762529544145903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.041, y: -0.659, z: 2.5516853}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5351439104537575814}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2067163230409246660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562842805843409218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8232899, y: 1.64, z: 0.72}
+  m_Center: {x: 0.0047559887, y: -1.29, z: -0.93}
 --- !u!1 &7900414492048190981
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5351439104537575814}
   - component: {fileID: 6737735146911031960}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MiniGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,6 +85,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6801213467740360678}
+  - {fileID: 276806489741261136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
@@ -49,8 +106,10 @@ MonoBehaviour:
   offSetPatrol: 1.5
   barrel: {fileID: 2395362389180442653}
   rottateBarrelSpeed: 650
-  ammo: {fileID: 0}
-  speedAmmo: 0
+  ammoPrefab: {fileID: 8085051327684585670, guid: 8484face26bc8864da8bed9d02f7c190,
+    type: 3}
+  spawnPoint: {fileID: 276806489741261136}
+  shootingFrequency: 4
   RangeToSeePlayer: 20
 --- !u!1001 &6478563167218247693
 PrefabInstance:
@@ -119,6 +178,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ba129991be94b2d4f8dcc45b1a26fd29, type: 2}
+    - target: {fileID: -516098083770646512, guid: d347eb93acc82a040a4566f96b41fc39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 327064008815436722, guid: d347eb93acc82a040a4566f96b41fc39,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -128,6 +192,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d347eb93acc82a040a4566f96b41fc39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502877291743220047, guid: d347eb93acc82a040a4566f96b41fc39,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: d347eb93acc82a040a4566f96b41fc39,
         type: 3}
@@ -175,6 +249,12 @@ Transform:
 --- !u!1 &2395362389180442653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: d347eb93acc82a040a4566f96b41fc39,
+    type: 3}
+  m_PrefabInstance: {fileID: 6478563167218247693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5562842805843409218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1502877291743220047, guid: d347eb93acc82a040a4566f96b41fc39,
     type: 3}
   m_PrefabInstance: {fileID: 6478563167218247693}
   m_PrefabAsset: {fileID: 0}
