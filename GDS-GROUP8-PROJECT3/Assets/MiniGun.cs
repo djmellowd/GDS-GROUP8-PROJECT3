@@ -65,6 +65,7 @@ public class MiniGun : MonoBehaviour
         for (int i = 0; i < ammoPrefab.GetComponent<EnemyAmmoInGame>().EnemyBullet.LimitAmmo; i++)
         {
             GameObject ammo = Instantiate(ammoPrefab);
+            ammo.GetComponent<EnemyAmmoInGame>().Player = player;
             ammoList.Add(ammo);
             ammo.SetActive(false);
         }
@@ -128,6 +129,6 @@ public class MiniGun : MonoBehaviour
     private void RotateBarrel()
     {
         rotationParameter =+   Time.time* rottateBarrelSpeed;
-        barrel.transform.localRotation =  Quaternion.Euler(rotationParameter, -90, 90);
+        barrel.transform.localRotation =  Quaternion.Euler(0, 0, rotationParameter);
     }
 }
