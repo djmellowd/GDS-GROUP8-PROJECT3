@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.33
+  m_Intensity: 0.97
   m_Range: 16.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -135,7 +135,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.33
+  m_Intensity: 0.96
   m_Range: 16.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -297,7 +297,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.33
+  m_Intensity: 0.88
   m_Range: 16.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -421,7 +421,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.33
+  m_Intensity: 1.36
   m_Range: 16.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -605,7 +605,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.33
+  m_Intensity: 2.03
   m_Range: 16.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -644,7 +644,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -697,7 +697,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.33
+  m_Intensity: 1.03
   m_Range: 16.74
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2902,6 +2902,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7804523483582320225}
     m_Modifications:
+    - target: {fileID: 571608354030828239, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 919185578117016226, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166683749097307813, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166683749097307813, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2194580512535822605, guid: c274d0db50d149445979150dde028ef5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2957,10 +2977,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3783569095009595134, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3783569095009595134, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379584947264040098, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429076472706871200, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640225172442830198, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039033306064160540, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039033306064160540, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494182444474157527, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494182444474157527, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7452308773981639232, guid: c274d0db50d149445979150dde028ef5,
         type: 3}
       propertyPath: m_Name
       value: lights and effects
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354400254914141284, guid: c274d0db50d149445979150dde028ef5,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c274d0db50d149445979150dde028ef5, type: 3}
