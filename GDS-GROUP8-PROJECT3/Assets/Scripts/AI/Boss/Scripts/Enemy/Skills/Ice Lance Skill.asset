@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda8a17b85f9d274e87a86ff2a9274d1, type: 3}
   m_Name: Ice Lance Skill
   m_EditorClassIdentifier: 
-  Cooldown: 25
-  Damage: 300
+  Cooldown: 3
+  Damage: 100
   UnlockLevel: 1
-  IsActivating: 0
-  LancesToShoot: 1
-  Delay: 0
-  Range: 20
-  BulletSpeed: 0.01
+  IsActivating: 1
+  LancesToShoot: 2
+  Delay: 1
+  Range: 25
+  BulletSpeed: 75
   Prefab: {fileID: 4771680408785526254, guid: 6c6118c8eb07fa14192d5a1a9ccee438, type: 3}
   LineOfSightLayers:
     serializedVersion: 2
     m_Bits: 2049
-  ProjectileRadius: 2
-  BulletSpawnOffset: {x: 0, y: 1, z: 0.25}
+  ProjectileRadius: 0.1
+  BulletSpawnOffset: {x: 0, y: 0, z: 0}
