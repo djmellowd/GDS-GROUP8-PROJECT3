@@ -2774,6 +2774,7 @@ MonoBehaviour:
   basicData: {fileID: 11400000, guid: 1fb290379efb7e54c958844283118300, type: 2}
   hudManager: {fileID: 0}
   currentHealth: 0
+  MaxHealth: 0
 --- !u!54 &8661544556610260784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7165,7 +7166,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7150345339532398833
 GameObject:
@@ -7178,6 +7179,7 @@ GameObject:
   - component: {fileID: 7525780644056697419}
   - component: {fileID: 6908286576326706670}
   - component: {fileID: 8663761592147341604}
+  - component: {fileID: 946868596524391931}
   m_Layer: 0
   m_Name: Robot-LP-2
   m_TagString: Untagged
@@ -7246,6 +7248,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &946868596524391931
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7150345339532398833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
+  m_Controller: {fileID: 9100000, guid: e08d2d1fafd706949933fb90b5919be4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8475724841227226556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7289,7 +7310,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3783481468770547784
 MonoBehaviour:
@@ -7304,7 +7325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collider: {fileID: 891729585427399432}
-  FieldOfView: 90
+  FieldOfView: 360
   LineOfSightLayers:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 2049
