@@ -14,6 +14,7 @@ public class MiniGame_GameController : MonoBehaviour
     private int currentCheckPoint = 0;
     private Transform currentPoint;
     private Transform nextPoint;
+    
 
     private bool unlockWin = false;
 
@@ -52,8 +53,7 @@ public class MiniGame_GameController : MonoBehaviour
         SetUpLine();
         if (checkPoints.Length <= currentCheckPoint + 1)
         {
-            currentPoint = checkPoints[currentCheckPoint];
-            unlockWin = true;
+            WinGame();
         }
         else
         {
@@ -61,6 +61,17 @@ public class MiniGame_GameController : MonoBehaviour
         }
     }
 
+    private void WinGame()
+    {      
+        currentPoint = checkPoints[currentCheckPoint];
+        StartCoroutine(WaitForWin());
+    }
+
+    IEnumerator WaitForWin()
+    {
+        yield return new WaitForSeconds(0.2f);
+        unlockWin = true;
+    }
     private void RefreshPoints()
     {
         currentPoint = checkPoints[currentCheckPoint];

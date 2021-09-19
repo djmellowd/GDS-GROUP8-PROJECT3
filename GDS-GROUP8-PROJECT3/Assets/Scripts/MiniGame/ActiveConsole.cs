@@ -31,6 +31,7 @@ public class ActiveConsole : MonoBehaviour
         {
             return;                    
         }
+        
         if (Input.GetKeyDown(seriaObject.button))
         {
             startPosCamera = playerCam.transform;
@@ -61,6 +62,11 @@ public class ActiveConsole : MonoBehaviour
 
     private void Update()
     {
+        if (gameContoller.MiniGameControler[miniGameLvl].UnlockWin)
+        {
+            ActiveGame();
+            return;
+        }
         if (isOnConsole && playerCam.transform.position != cameraPoint.position && playerCam.transform.rotation != cameraPoint.rotation)
         {
             playerCam.transform.parent = cameraPoint;
