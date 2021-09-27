@@ -424,6 +424,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2661026527258668608, guid: f61cc3f87fdb63843b83ec0b34bb75a6,
         type: 3}
+      propertyPath: ammoPreFab
+      value: 
+      objectReference: {fileID: 5473184067333572023, guid: 8c97500e9b625bc4983ecc81702c4c1c,
+        type: 3}
+    - target: {fileID: 2661026527258668608, guid: f61cc3f87fdb63843b83ec0b34bb75a6,
+        type: 3}
       propertyPath: hudManager
       value: 
       objectReference: {fileID: 1614764858}
@@ -1482,6 +1488,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1835053692539486702, guid: 7ba5bb9d37d47da4a9a07f9bb7ed1d50,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3381897811389744465, guid: 7ba5bb9d37d47da4a9a07f9bb7ed1d50,
         type: 3}
       propertyPath: m_Name
@@ -1904,6 +1915,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2372350491863236235, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+        type: 3}
+      propertyPath: m_Name
+      value: TextBoxPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372350491863236235, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3215647105500591710, guid: b0933fa14aaa95c42a62eaf6cc2a1676,
         type: 3}
       propertyPath: m_AnchorMax.x

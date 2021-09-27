@@ -18,8 +18,6 @@ public class PlayerMainGun : MonoBehaviour
     [SerializeField]
     private GameObject ammoPreFab;
     [SerializeField]
-    private GameObject muzzlePrefab;
-    [SerializeField]
     private HudManager hudManager;
 
     private List<GameObject> ammoList = new List<GameObject>();
@@ -104,8 +102,6 @@ public class PlayerMainGun : MonoBehaviour
         {
             if (!ammoList[i].activeInHierarchy)
             {
-                Instantiate(muzzlePrefab, spawnPoint.transform.position, transform.rotation, spawnPoint.transform.parent);
-
                 Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
@@ -115,7 +111,7 @@ public class PlayerMainGun : MonoBehaviour
 
                 ammoList[i].transform.position = spawnPoint.transform.position;
                 ammoList[i].transform.rotation = gameObject.transform.rotation;
-                var rbAmmo = ammoList[i].GetComponent<movee>();
+                var rbAmmo = ammoList[i].GetComponent<PlayerLaser>();
                 rbAmmo.direction = destination;
                 rbAmmo.starPos = spawnPoint.position;
                 ammoList[i].SetActive(true);
