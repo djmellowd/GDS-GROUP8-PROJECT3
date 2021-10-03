@@ -37,7 +37,6 @@ public class PlayerMainGun : MonoBehaviour
     void Update()
     {
         Overheating();
-        Aiming();
     }
 
     private void PullObjectAmmo()
@@ -51,20 +50,6 @@ public class PlayerMainGun : MonoBehaviour
         }
     }
 
-    private void Aiming()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            var value = Mathf.Lerp(normalGunFov, bullet.aimingFov, smoothFovTransition);
-            mainCamera.fieldOfView = value;
-            smoothFovTransition += 8 * Time.deltaTime;
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            smoothFovTransition = 0;
-            mainCamera.fieldOfView = normalGunFov;
-        }
-    }
     private void Overheating()
     {
         if (Input.GetMouseButton(0) && Time.time >= timeToFire)
@@ -91,7 +76,7 @@ public class PlayerMainGun : MonoBehaviour
     IEnumerator TimeBetweenShoots()
     {
         yield return new WaitForSeconds(bullet.overheatingTime);
-        gunFragmentRender.materials[0].color = Color.yellow;
+        gunFragmentRender.materials[0].color = Color.black;
         resetGun = 0;
         hudManager.RefreshOverheatPlayer(resetGun);
     }
