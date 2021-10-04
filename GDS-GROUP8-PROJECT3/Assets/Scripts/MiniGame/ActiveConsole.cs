@@ -8,6 +8,7 @@ public class ActiveConsole : MonoBehaviour
     [SerializeField] private Objects seriaObject;
     [SerializeField] private int miniGameLvl;
     [SerializeField] private AutomaticDoor firstDoor;
+    [SerializeField] private List<Material> cablesMaterials;
 
     [SerializeField] private float speed;
     private GameContoller gameContoller;
@@ -18,10 +19,17 @@ public class ActiveConsole : MonoBehaviour
     private bool isOnConsole=false;
 
     private void Start()
-    {    
+    {
+        IniinitializationParameters();
+    }
+
+    private void IniinitializationParameters()
+    {
         gameContoller = FindObjectOfType<GameContoller>();
         playerCam = gameContoller.MainCamera;
+        cablesMaterials[miniGameLvl].SetColor("_EmissionColor", Color.red);
     }
+
     private void OnMouseOver()
     {
         if (isOnConsole)
@@ -69,8 +77,16 @@ public class ActiveConsole : MonoBehaviour
             {
                 firstDoor.FirstDoor = false;
             }
-            ActiveGame();
-            return;
+            else
+            {
+                cablesMaterials[miniGameLvl].SetColor("_EmissionColor", Color.green);
+            }
+            if (isOnConsole)
+            {
+                ActiveGame();
+                return;
+            }
+           
         }
         if (isOnConsole && playerCam.transform.position != cameraPoint.position && playerCam.transform.rotation != cameraPoint.rotation)
         {
