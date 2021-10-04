@@ -16,15 +16,17 @@ public class FragmentDoor : MonoBehaviour
 
         if (Input.GetKeyDown(seriaObject.button))
         {
-            if (automaticDoor.DoorIsOpen)
+            if (!automaticDoor.FirstDoor)
             {
-                automaticDoor.DoorIsOpen = false;
-            }
-            else
-            {
-                automaticDoor.DoorIsOpen = true;
-            }
-
+                if (automaticDoor.DoorIsOpen)
+                {
+                    automaticDoor.DoorIsOpen = false;
+                }
+                else
+                {
+                    automaticDoor.DoorIsOpen = true;
+                }
+            }          
         }
     }
 }

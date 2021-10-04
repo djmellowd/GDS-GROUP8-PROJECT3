@@ -43,17 +43,14 @@ public class AutomaticDoor : MonoBehaviour
 
     private void Update()
     {
-        if (!FirstDoor)
+        if (DoorIsOpen)
         {
-            if (DoorIsOpen)
-            {
-                OpenDoor();
-            }
-            else
-            {
-                CloseDoor();
-            }
-        }     
+            OpenDoor();
+        }
+        else
+        {
+            CloseDoor();
+        }
     }
 
     private void OpenDoor()
