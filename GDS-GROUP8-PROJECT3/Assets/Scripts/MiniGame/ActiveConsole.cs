@@ -7,6 +7,7 @@ public class ActiveConsole : MonoBehaviour
     [SerializeField] private Transform cameraPoint;
     [SerializeField] private Objects seriaObject;
     [SerializeField] private int miniGameLvl;
+    [SerializeField] private AutomaticDoor firstDoor;
 
     [SerializeField] private float speed;
     private GameContoller gameContoller;
@@ -64,6 +65,10 @@ public class ActiveConsole : MonoBehaviour
     {
         if (gameContoller.MiniGameControler[miniGameLvl].UnlockWin)
         {
+            if (miniGameLvl == 3) // First MiniGame
+            {
+                firstDoor.FirstDoor = false;
+            }
             ActiveGame();
             return;
         }
