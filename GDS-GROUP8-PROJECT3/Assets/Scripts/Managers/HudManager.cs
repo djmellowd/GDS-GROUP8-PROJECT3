@@ -90,7 +90,11 @@ public class HudManager : MonoBehaviour
             _playerCurrentHp += value;
         }
 
-        if (_playerCurrentHp <= 50 && _playerCurrentHp > 25)
+        if (_playerCurrentHp >= 50)
+        {
+            damageIcons[0].SetActive(false);
+        }
+        else if (_playerCurrentHp <= 50 && _playerCurrentHp > 25)
         {
             ActiveIcon(0);
             hpImage.color = Color.green;
@@ -100,7 +104,7 @@ public class HudManager : MonoBehaviour
             ActiveIcon(1);
             hpImage.color = Color.yellow;
         }
-        else if (_playerCurrentHp <= 5)
+        else if (_playerCurrentHp <= 0)
         {
             hpImage.color = Color.red;
             ActiveIcon(2);
