@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &26135844
 Transform:
   m_ObjectHideFlags: 0
@@ -20043,6 +20043,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 1
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &1685540055146748172
 NavMeshObstacle:
@@ -25071,6 +25072,8 @@ MonoBehaviour:
   cameraPoint: {fileID: 7074615549243026577}
   seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   miniGameLvl: 2
+  firstDoor: {fileID: 0}
+  cablesMaterials: []
   speed: 10
 --- !u!23 &2197456552199229400
 MeshRenderer:
@@ -27200,6 +27203,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 0
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &2430823472864246905
 NavMeshObstacle:
@@ -38382,6 +38386,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 0
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &3809236807205890626
 NavMeshObstacle:
@@ -53896,6 +53901,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 0
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &5170791405638184909
 NavMeshObstacle:
@@ -55948,6 +55954,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 0
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &5379407047123818592
 NavMeshObstacle:
@@ -61121,6 +61128,8 @@ MonoBehaviour:
   cameraPoint: {fileID: 3314763420461665540}
   seriaObject: {fileID: 11400000, guid: fe73e76e5ce3c9242b9b7a2e45942964, type: 2}
   miniGameLvl: 0
+  firstDoor: {fileID: 0}
+  cablesMaterials: []
   speed: 10
 --- !u!33 &5932522292938980881
 MeshFilter:
@@ -68651,6 +68660,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 1
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &6721961483111007640
 NavMeshObstacle:
@@ -82376,6 +82386,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 0
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &8096987660630062306
 NavMeshObstacle:
@@ -85877,6 +85888,7 @@ MonoBehaviour:
   deviation: 2
   speed: 5
   rotateDoorY: 0
+  FirstDoor: 0
   DoorIsOpen: 0
 --- !u!208 &8408840557480474222
 NavMeshObstacle:
