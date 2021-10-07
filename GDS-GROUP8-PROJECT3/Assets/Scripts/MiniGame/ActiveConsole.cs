@@ -27,7 +27,11 @@ public class ActiveConsole : MonoBehaviour
     {
         gameContoller = FindObjectOfType<GameContoller>();
         playerCam = gameContoller.MainCamera;
-        cablesMaterials[miniGameLvl].SetColor("_EmissionColor", Color.red);
+        if (miniGameLvl!=0)
+        {
+            cablesMaterials[miniGameLvl-1].SetColor("_EmissionColor", Color.red);
+        }
+        
     }
 
     private void OnMouseOver()
