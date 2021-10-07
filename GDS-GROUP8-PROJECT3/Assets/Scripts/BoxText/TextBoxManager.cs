@@ -19,6 +19,7 @@ public class TextBoxManager : MonoBehaviour
     {
         textInBox.text = text;
         boxCanvas.SetActive(true);
+        StopAllCoroutines();
         StartCoroutine(WaitForHideBox(timeToHide));
     }
 

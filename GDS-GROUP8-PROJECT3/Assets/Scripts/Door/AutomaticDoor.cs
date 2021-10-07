@@ -11,12 +11,17 @@ public class AutomaticDoor : MonoBehaviour
     [SerializeField] private int speed;
     [SerializeField] private bool rotateDoorY;
 
+
     private Vector3 _leftDir;
     private Vector3 _rightDir;
     private Vector3 _leftStart;
     private Vector3 _rightStart;
 
+
+    public bool FirstDoor;
     public bool DoorIsOpen = false;
+    private bool canOpen = false;
+
 
     private void Awake()
     {

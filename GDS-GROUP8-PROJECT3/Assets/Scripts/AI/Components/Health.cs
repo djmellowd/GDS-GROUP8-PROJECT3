@@ -8,6 +8,7 @@ namespace BehaviorDesigner.Runtime.Tactical
     public class Health : MonoBehaviour, IDamageable
     {
         [SerializeField] private BasicData basicData;
+        [SerializeField] private GameObject enemyBoom;
         // The amount of health to begin with
         [Header("!Only For Player!")]
         [SerializeField] private HudManager hudManager;
@@ -36,7 +37,14 @@ namespace BehaviorDesigner.Runtime.Tactical
                 hudManager.RefreshHpPlayer(amount, false);
             }
 
-            if (currentHealth == 0) {
+            if (currentHealth == 0) 
+            {
+                if (enemyBoom !=null)
+                {
+                    GameObject boom = Instantiate(enemyBoom, transform.position, transform.rotation);
+                    Debug.Log(1);
+                    Destroy(boom,2);
+                }
                 gameObject.SetActive(false);
             }
         }
