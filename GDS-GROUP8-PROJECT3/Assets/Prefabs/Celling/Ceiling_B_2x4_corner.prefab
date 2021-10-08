@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7538212747739789366
+--- !u!1 &4369774905283559247
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6227545997936669325}
-  - component: {fileID: 7287546359610164255}
-  - component: {fileID: 8907562087046006130}
+  - component: {fileID: 1938803503742728375}
+  - component: {fileID: 4160650878980002421}
+  - component: {fileID: 3268629560932836137}
+  - component: {fileID: 3332387951309151593}
   m_Layer: 0
-  m_Name: Ceiling_B_2x4_corner.001
+  m_Name: Ceiling_B_2x4_corner.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6227545997936669325
+--- !u!4 &1938803503742728375
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7538212747739789366}
+  m_GameObject: {fileID: 4369774905283559247}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8887816145162020713}
+  m_Father: {fileID: 8588798333550876068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7287546359610164255
+--- !u!33 &4160650878980002421
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7538212747739789366}
-  m_Mesh: {fileID: -6241710064952852024, guid: 7ad07550c6cb4994b95ee9b28296d3dd, type: 3}
---- !u!23 &8907562087046006130
+  m_GameObject: {fileID: 4369774905283559247}
+  m_Mesh: {fileID: -3343365188713628991, guid: 7ad07550c6cb4994b95ee9b28296d3dd, type: 3}
+--- !u!23 &3268629560932836137
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7538212747739789366}
+  m_GameObject: {fileID: 4369774905283559247}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,7 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &8078346251343330771
+--- !u!65 &3332387951309151593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369774905283559247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000002, y: 0.120537415, z: 4}
+  m_Center: {x: 1.0000001, y: 0.010268705, z: 2}
+--- !u!1 &8969580807319719710
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,8 +101,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8887816145162020713}
-  - component: {fileID: 2192384564867522805}
+  - component: {fileID: 8588798333550876068}
   m_Layer: 0
   m_Name: Ceiling_B_2x4_corner
   m_TagString: Untagged
@@ -96,31 +109,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8887816145162020713
+--- !u!4 &8588798333550876068
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8078346251343330771}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -39.695206, y: 0.8361168, z: 72.69904}
+  m_GameObject: {fileID: 8969580807319719710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -47.84925, y: -0.37049866, z: 66.33414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6227545997936669325}
+  - {fileID: 1938803503742728375}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2192384564867522805
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8078346251343330771}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
