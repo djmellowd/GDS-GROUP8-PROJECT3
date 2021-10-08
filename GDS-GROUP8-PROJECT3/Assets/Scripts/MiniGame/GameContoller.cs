@@ -16,4 +16,8 @@ public class GameContoller : Singleton
     public List<Canvas> MiniGameCanvas;
     public List<MiniGame_GameController> MiniGameControler;
 
+    private void Awake()
+    {
+        MakeSingleton();
+    }
 }

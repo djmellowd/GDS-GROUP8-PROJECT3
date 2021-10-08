@@ -11,6 +11,15 @@ public class ButtonManager : Singleton
     private static string _mainGameText = "Gameplay";
     private static string _mainMenuText = "MainMenuNew";
 
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        MakeSingleton();
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play("MenuMusic");
+    }
+
     public void ExitGame()
     {
         Application.Quit();

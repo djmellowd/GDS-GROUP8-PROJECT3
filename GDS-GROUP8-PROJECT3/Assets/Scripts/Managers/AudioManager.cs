@@ -7,8 +7,9 @@ public class AudioManager : Singleton
     [SerializeField] AudioMixer mainMixer;
     public Sound[] sounds;
 
-    void Awake()
+   private  void Awake()
     {
+        MakeSingleton();
         foreach (var s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
