@@ -1,13 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class AdditiveScenesLoad : MonoBehaviour
 {
-    public string sceneName;
-    public string sceneName2;
+    [SerializeField] private List<string> sceneName;
     void Awake()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName2, LoadSceneMode.Additive);
+        foreach (var item in sceneName)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(item, LoadSceneMode.Additive);
+        }
     }
 }

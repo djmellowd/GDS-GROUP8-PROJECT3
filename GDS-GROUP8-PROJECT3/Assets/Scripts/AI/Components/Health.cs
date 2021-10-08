@@ -15,11 +15,18 @@ namespace BehaviorDesigner.Runtime.Tactical
         [HideInInspector]public float currentHealth;
         [HideInInspector] public float MaxHealth;
 
+        private ButtonManager buttonManager;
+
         /// <summary>
         /// Initailzies the current health.
         /// </summary>
         private void Awake()
         {
+            if (hudManager != null)
+            {
+                buttonManager = FindObjectOfType<ButtonManager>();
+            }
+
             currentHealth = basicData.health;
             MaxHealth = currentHealth;
         }
@@ -42,10 +49,13 @@ namespace BehaviorDesigner.Runtime.Tactical
                 if (enemyBoom !=null)
                 {
                     GameObject boom = Instantiate(enemyBoom, transform.position, transform.rotation);
-                    Debug.Log(1);
                     Destroy(boom,2);
                 }
-                gameObject.SetActive(false);
+                if (hudManager != null)
+                {
+                    buttonManager.GoToMainMenu();
+                }
+                    gameObject.SetActive(false);
             }
         }
 
