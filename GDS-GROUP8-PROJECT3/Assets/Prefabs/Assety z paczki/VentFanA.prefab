@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33388599166089934}
   - component: {fileID: 23767402615130386}
   - component: {fileID: 64504401206180872}
+  - component: {fileID: 4719702561832745242}
   m_Layer: 0
   m_Name: VentFan
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000130700780678}
-  m_LocalRotation: {x: 0.000000054494418, y: 0.00000031618603, z: 0.925608, w: -0.37848365}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9256396, w: 0.37840635}
   m_LocalPosition: {x: -1.0158706, y: 0.98977345, z: -0.24880862}
   m_LocalScale: {x: 1.664722, y: 1.664722, z: 1.6647218}
   m_Children: []
   m_Father: {fileID: 4431109130705476}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -135.53}
 --- !u!33 &33388599166089934
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,6 +95,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 606a386d3196fed46babd50e6bc42087, type: 3}
+--- !u!95 &4719702561832745242
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000130700780678}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50e0fc14531d55e42afa86bd81cfe693, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1361809661337804
 GameObject:
   m_ObjectHideFlags: 0

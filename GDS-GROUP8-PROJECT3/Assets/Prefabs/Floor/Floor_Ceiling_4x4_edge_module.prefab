@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7882030393294016354}
   - component: {fileID: 3876811046593085138}
   - component: {fileID: 5164451577414423972}
+  - component: {fileID: 5497891001371754921}
   m_Layer: 0
   m_Name: Floor_Ceiling_4x4_edge_module
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5497891001371754921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812353787536438842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.61566025, z: 4}
+  m_Center: {x: 2, y: -0.26270726, z: 2}
 --- !u!1 &7714443895832007936
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6936921617403416506}
-  - component: {fileID: 998672792276795900}
   m_Layer: 0
   m_Name: Floor_Ceiling_4x4_edge_module
   m_TagString: Untagged
@@ -111,16 +124,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &998672792276795900
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7714443895832007936}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
