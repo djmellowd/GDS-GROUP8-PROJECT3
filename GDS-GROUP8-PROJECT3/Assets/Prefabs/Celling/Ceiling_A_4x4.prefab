@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3825594747752597273}
-  - component: {fileID: 318041248840075994}
   m_Layer: 0
   m_Name: Ceiling_A_4x4
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &318041248840075994
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4493728812748807587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6033918153693330632
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +42,7 @@ GameObject:
   - component: {fileID: 4190225760213557066}
   - component: {fileID: 847662441243725342}
   - component: {fileID: 1799734773796779819}
+  - component: {fileID: 7682725693998732113}
   m_Layer: 0
   m_Name: Ceiling_A_4x4.001
   m_TagString: Untagged
@@ -124,3 +111,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7682725693998732113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033918153693330632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9999998, y: 0.07543825, z: 4}
+  m_Center: {x: 2, y: -0.012280833, z: -2.000002}
