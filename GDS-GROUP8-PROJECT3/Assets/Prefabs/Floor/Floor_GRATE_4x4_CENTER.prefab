@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3912542698628153288}
-  - component: {fileID: 2774461169961958767}
   m_Layer: 0
   m_Name: Floor_GRATE_4x4_CENTER
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2774461169961958767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4397752349917390194}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7734699146430263173
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +42,7 @@ GameObject:
   - component: {fileID: 7019938338171308369}
   - component: {fileID: 2325494250180826581}
   - component: {fileID: 6321177418644679346}
+  - component: {fileID: 4364163007109903812}
   m_Layer: 0
   m_Name: Floor_GRATE_4x4_CENTER
   m_TagString: Untagged
@@ -124,3 +111,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4364163007109903812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734699146430263173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0000014, y: 0.40649712, z: 4.0000315}
+  m_Center: {x: -2.0000002, y: -0.15926033, z: -2.0000148}
