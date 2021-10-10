@@ -6,25 +6,17 @@ using UnityEngine;
 public class EnemyAmmoInGame : MonoBehaviour
 {
     [SerializeField] private EnemyBullet enemyBullet;
-    [SerializeField] private Rigidbody rigidbody;
 
     public GameObject Player;
     public EnemyBullet EnemyBullet=> enemyBullet;
 
-    void Update()
-    {
-        rigidbody.MovePosition(rigidbody.position + enemyBullet.speed * transform.forward * Time.deltaTime);
-    }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnParticleCollision(GameObject other)
     {
-        if (collision.gameObject == Player)
+        IDamageable damageable;
+        if ((damageable = other.gameObject.GetComponent(typeof(IDamageable)) as IDamageable) != null)
         {
-            IDamageable damageable;
-            if ((damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable) != null)
-            {
-                damageable.Damage(enemyBullet.damage);
-            }
+            damageable.Damage(enemyBullet.damage);
         }
         gameObject.SetActive(false);
     }
