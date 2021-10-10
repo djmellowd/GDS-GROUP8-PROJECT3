@@ -9,14 +9,18 @@ public class ButtonManager : Singleton
 {
 
     private static string _mainGameText = "Gameplay";
-    private static string _mainMenuText = "MainMenuNew";
+
 
     private AudioManager audioManager;
 
+    public static ButtonManager instance;
     private void Awake()
     {
-        MakeSingleton();
         audioManager = FindObjectOfType<AudioManager>();
+       
+    }
+    private void Start()
+    {
         audioManager.Play("MenuMusic");
     }
 
@@ -31,17 +35,5 @@ public class ButtonManager : Singleton
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainGameText);
     }
 
-    public void GoToMainMenu()
-    {
-        StartCoroutine(GoToMenu());
-    }
 
-    private IEnumerator GoToMenu()
-    {
-        yield return new WaitForSeconds(1);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
-        audioManager.Play("MenuMusic");
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-    }
 }

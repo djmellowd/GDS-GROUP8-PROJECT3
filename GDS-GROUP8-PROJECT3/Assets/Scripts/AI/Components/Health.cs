@@ -53,7 +53,7 @@ namespace BehaviorDesigner.Runtime.Tactical
                 }
                 if (hudManager != null)
                 {
-                    buttonManager.GoToMainMenu();
+                    hudManager.GoToMainMenu();
                 }
                     gameObject.SetActive(false);
             }

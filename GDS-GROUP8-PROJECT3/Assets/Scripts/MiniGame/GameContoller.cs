@@ -16,8 +16,18 @@ public class GameContoller : Singleton
     public List<Canvas> MiniGameCanvas;
     public List<MiniGame_GameController> MiniGameControler;
 
+    public static GameContoller instance;
+
     private void Awake()
     {
-        MakeSingleton();
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

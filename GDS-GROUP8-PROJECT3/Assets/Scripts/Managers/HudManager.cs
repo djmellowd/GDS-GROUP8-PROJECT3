@@ -36,6 +36,7 @@ public class HudManager : MonoBehaviour
     private float _playerCurrentHp;
     private float _playerCurrentOverheat=0;
 
+    private static string _mainMenuText = "MainMenuNew";
     private void Awake()
     {
         _playerCurrentHp = playerData.health;
@@ -65,6 +66,19 @@ public class HudManager : MonoBehaviour
     {
         overheatSlider.maxValue = overheatData.limitAmmo;
         overheatSlider.value = 0;
+    }
+
+    public void GoToMainMenu()
+    {
+        StartCoroutine(GoToMenu());
+    }
+
+    private IEnumerator GoToMenu()
+    {
+        yield return new WaitForSeconds(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     public void ChangeColorCrosshair()
