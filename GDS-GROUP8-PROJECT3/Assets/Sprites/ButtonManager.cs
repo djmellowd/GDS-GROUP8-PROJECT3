@@ -27,6 +27,7 @@ public class ButtonManager : Singleton
 
     public void GoToMainGame()
     {
+        audioManager.Stop("MenuMusic");
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainGameText);
     }
 
@@ -39,7 +40,7 @@ public class ButtonManager : Singleton
     {
         yield return new WaitForSeconds(1);
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
-
+        audioManager.Play("MenuMusic");
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
