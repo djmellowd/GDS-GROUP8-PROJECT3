@@ -1014,6 +1014,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1258546956669258563, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+        type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 6015221087715883374}
     - target: {fileID: 6015221088641521905, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1074,8 +1079,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: SHIP'S BRIDGE
       objectReference: {fileID: 0}
+    - target: {fileID: 6940546426191694489, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+        type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 6015221087715883372}
+    - target: {fileID: 7060859193078782314, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+        type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 6015221087715883373}
+    - target: {fileID: 9196327604740606860, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+        type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 6015221087715883375}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79074a0cf27f1c47aa6c6f92b6fddb5, type: 3}
+--- !u!108 &6015221087715883372 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 9028734345842379842, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6015221087715883371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &6015221087715883373 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 2096378639047884533, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6015221087715883371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &6015221087715883374 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 6373293062217014019, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6015221087715883371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &6015221087715883375 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 2839192007348923334, guid: e79074a0cf27f1c47aa6c6f92b6fddb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6015221087715883371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7207391705109642651
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EndGameButton : MonoBehaviour
 {
     [SerializeField] private Objects seriaObject;
+    [SerializeField] private Light light;
     private bool isActive = false;
 
     public bool IsActive => isActive;
@@ -18,6 +19,7 @@ public class EndGameButton : MonoBehaviour
 
         if (Input.GetKeyDown(seriaObject.button))
         {
+            light.color = Color.green;
             isActive = true;
         }
     }
