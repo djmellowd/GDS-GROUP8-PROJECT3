@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : Singleton
 {
-
     private static string _mainGameText = "Gameplay";
-
-
     private AudioManager audioManager;
 
     public static ButtonManager instance;
@@ -32,8 +29,14 @@ public class ButtonManager : Singleton
     public void GoToMainGame()
     {
         audioManager.Stop("MenuMusic");
+        audioManager.NormalGame = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainGameText);
     }
 
-
+    public void GoToMainGameEasy()
+    {
+        audioManager.Stop("MenuMusic");
+        audioManager.NormalGame = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainGameText);
+    }
 }

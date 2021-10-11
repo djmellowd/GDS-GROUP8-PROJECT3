@@ -5,11 +5,22 @@ using UnityEngine.SceneManagement;
 public class AdditiveScenesLoad : MonoBehaviour
 {
     [SerializeField] private List<string> sceneName;
-    void Awake()
+    private AudioManager audioManager;
+
+    private void Awake()
     {
-        foreach (var item in sceneName)
+        audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager.NormalGame)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(item, LoadSceneMode.Additive);
+            foreach (var item in sceneName)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(item, LoadSceneMode.Additive);
+            }
         }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName[0], LoadSceneMode.Additive);
+        }
+        
     }
 }

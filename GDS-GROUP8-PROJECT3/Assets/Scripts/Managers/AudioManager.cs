@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    public bool NormalGame;
+
     private void Awake()
     {
         if (instance != null)
