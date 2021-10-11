@@ -8,6 +8,7 @@ public class TextBox : MonoBehaviour
 
     [SerializeField] [TextArea(1, 4)] private string textInBox;
     [SerializeField] private float timeToHide;
+    [SerializeField] private AudioSource audioSource;
 
     [HideInInspector] public TextBoxManager TextBoxManager;
 
@@ -18,6 +19,7 @@ public class TextBox : MonoBehaviour
         {
             if (other.gameObject.tag == PLAYER_TAG)
             {
+                audioSource.Play();
                 firstAwake = true;
                 TextBoxManager.ActiveBox(textInBox, timeToHide);
             }
