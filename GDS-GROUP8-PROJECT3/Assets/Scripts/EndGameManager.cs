@@ -5,6 +5,7 @@ using UnityEngine;
 public class EndGameManager : MonoBehaviour
 {
     [SerializeField] private List<EndGameButton> endGameButtons;
+    [SerializeField] private List<MiniGun> miniGuns;
 
     private bool firstAwake=true;
 
@@ -32,5 +33,13 @@ public class EndGameManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void StartAttack()
+    {
+        foreach (var item in miniGuns)
+        {
+            item.StartAtack = true;
+        }
     }
 }

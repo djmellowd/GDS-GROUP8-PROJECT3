@@ -18,8 +18,6 @@ public class MiniGun : MonoBehaviour
     [SerializeField] private GameObject ammoPrefab;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float shootingFrequency;
-    [SerializeField] private float RangeToSeePlayer;
-    [SerializeField] private float RedZone;
 
     private Quaternion leftRotation;
     private Quaternion rightRotation;
@@ -30,6 +28,8 @@ public class MiniGun : MonoBehaviour
 
     private List<GameObject> ammoList = new List<GameObject>();
     private float timer;
+
+    public bool StartAtack;
 
     void Awake()
     {
@@ -48,8 +48,7 @@ public class MiniGun : MonoBehaviour
 
     void Update()
     {
-        var distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance >= RangeToSeePlayer || distance <= RedZone)
+        if (!StartAtack)
         {
             timer = RESET_TIMER;
             Patrol();
@@ -96,7 +95,6 @@ public class MiniGun : MonoBehaviour
     private void LookAtPlayer()
     {
         var lookPos = player.transform.position - transform.position;
-        lookPos.y += 1;
         var rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rottateBarrelSpeed);
         
