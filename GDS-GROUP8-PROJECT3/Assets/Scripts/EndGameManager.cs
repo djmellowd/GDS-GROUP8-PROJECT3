@@ -6,6 +6,8 @@ public class EndGameManager : MonoBehaviour
 {
     [SerializeField] private List<EndGameButton> endGameButtons;
     [SerializeField] private List<MiniGun> miniGuns;
+    [SerializeField] private GameObject hologram;
+    [SerializeField] private AudioSource audioSource;
 
     private bool firstAwake=true;
 
@@ -15,11 +17,18 @@ public class EndGameManager : MonoBehaviour
         {
             if (IsAllMissionComplete())
             {
-                Debug.Log("KONIEC GRY");
+                hologram.SetActive(true);
                 firstAwake = false;
+              StartCoroutine(StartAttackPlayer(audioSource.clip.length));
             }
         }
         
+    }
+
+    private IEnumerator StartAttackPlayer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        StartAttack();
     }
 
     private bool IsAllMissionComplete()
