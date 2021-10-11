@@ -15,18 +15,12 @@ namespace BehaviorDesigner.Runtime.Tactical
         [HideInInspector]public float currentHealth;
         [HideInInspector] public float MaxHealth;
 
-        private ButtonManager buttonManager;
 
         /// <summary>
         /// Initailzies the current health.
         /// </summary>
         private void Awake()
         {
-            if (hudManager != null)
-            {
-                buttonManager = FindObjectOfType<ButtonManager>();
-            }
-
             currentHealth = basicData.health;
             MaxHealth = currentHealth;
         }
@@ -53,7 +47,7 @@ namespace BehaviorDesigner.Runtime.Tactical
                 }
                 if (hudManager != null)
                 {
-                    hudManager.GoToMainMenu();
+                    hudManager.UnlockMouse();
                 }
                     gameObject.SetActive(false);
             }

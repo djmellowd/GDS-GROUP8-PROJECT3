@@ -68,17 +68,19 @@ public class HudManager : MonoBehaviour
         overheatSlider.value = 0;
     }
 
-    public void GoToMainMenu()
+    public void UnlockMouse()
     {
-        StartCoroutine(GoToMenu());
-    }
-
-    private IEnumerator GoToMenu()
-    {
-        yield return new WaitForSeconds(1);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+    }
+
+    public void GoToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
+    }
+    public void StartMainGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
     }
 
     public void ChangeColorCrosshair()

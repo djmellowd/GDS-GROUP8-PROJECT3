@@ -9,6 +9,7 @@ public class TextBoxManager : MonoBehaviour
     [SerializeField] private GameObject boxCanvas;
     [SerializeField] private TextMeshProUGUI textInBox;
     [SerializeField] private List<TextBox> texts;
+
     private void Awake()
     {
         foreach (var item in texts)
