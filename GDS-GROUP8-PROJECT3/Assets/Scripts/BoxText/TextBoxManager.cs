@@ -19,6 +19,10 @@ public class TextBoxManager : MonoBehaviour
     }
     public void ActiveBox(string text, float timeToHide)
     {
+        foreach (var item in texts)
+        {
+            item.AudioSource.Stop();
+        }
         textInBox.text = text;
         boxCanvas.SetActive(true);
         StopAllCoroutines();
