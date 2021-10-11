@@ -12,7 +12,7 @@ public class PlayerMainGun : MonoBehaviour
     [SerializeField]
     private Camera mainCamera;
     [SerializeField]
-    private Renderer gunFragmentRender;
+    private Material gunFragmentRender;
     [SerializeField]
     private Transform parentAmmo;
     [SerializeField]
@@ -67,7 +67,7 @@ public class PlayerMainGun : MonoBehaviour
             else
             {
                 hudManager.RefreshOverheatPlayer(resetGun);
-                gunFragmentRender.materials[0].color = Color.red;
+                gunFragmentRender.color = Color.red;
             }
         }
     }
@@ -76,7 +76,7 @@ public class PlayerMainGun : MonoBehaviour
     IEnumerator TimeBetweenShoots()
     {
         yield return new WaitForSeconds(bullet.overheatingTime);
-        gunFragmentRender.materials[0].color = Color.black;
+        gunFragmentRender.color = Color.black;
         resetGun = 0;
         hudManager.RefreshOverheatPlayer(resetGun);
     }
