@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ch48_body1
-  m_Shader: {fileID: 101, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: f75b527f26f6e73429b65dd509b259d8, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -59,14 +59,24 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Distortion: -2.41
     - _DstBlend: 0
+    - _EmissionMultiplier: 1
+    - _GlitchDensity: 0
+    - _GlitchPeriod: 0
+    - _GlitchStrength: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _Hollowness: 0.211
+    - _HoloDistance: 0.418
+    - _HoloSpeed: 1
+    - _HoloValue: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RimPower: 1.01
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -75,3 +85,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlitchDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _HoloColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HoloDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
