@@ -324,8 +324,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room_6
       objectReference: {fileID: 0}
+    - target: {fileID: 6887677476857670388, guid: da049a736f8396e4dbbac753d03d6f22,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 2.38
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da049a736f8396e4dbbac753d03d6f22, type: 3}
+--- !u!1 &1672679586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4416890738327730635, guid: da049a736f8396e4dbbac753d03d6f22,
+    type: 3}
+  m_PrefabInstance: {fileID: 1672679585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1672679587
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672679586}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb1aaccc33083dd4b9ad050b5ad13704, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1693497029
 PrefabInstance:
   m_ObjectHideFlags: 0
