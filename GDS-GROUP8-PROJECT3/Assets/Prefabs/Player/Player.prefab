@@ -367,6 +367,7 @@ Transform:
   m_Children:
   - {fileID: 2562433061578829408}
   - {fileID: 1399284383}
+  - {fileID: 5017512421019595652}
   m_Father: {fileID: 2562433062737686192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,14 +723,14 @@ MonoBehaviour:
   orientation: {fileID: 9081958692756935294}
   rb: {fileID: 1414711881}
   sensitivity: 50
-  moveSpeed: 6000
+  moveSpeed: 8000
   maxSpeed: 8
   grounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
   counterMovement: 0.175
-  maxSlopeAngle: 35
+  maxSlopeAngle: 45
 --- !u!114 &2562433062737686200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,9 +745,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicData: {fileID: 11400000, guid: 407028ed8bc698840bd8823c6701f5a9, type: 2}
   enemyBoom: {fileID: 0}
+  isMiniGun: 0
   hudManager: {fileID: 0}
   currentHealth: 0
   MaxHealth: 0
+  audioSource: {fileID: 0}
 --- !u!54 &1414711881
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1098,6 +1101,36 @@ Transform:
   - {fileID: 1327126559062710366}
   m_Father: {fileID: 7365735791171622740}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4470807637014986361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5017512421019595652}
+  m_Layer: 11
+  m_Name: Head
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5017512421019595652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4470807637014986361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8274727243182032188}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4477910729134985568
 GameObject:
