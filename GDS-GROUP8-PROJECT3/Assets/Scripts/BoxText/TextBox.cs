@@ -19,11 +19,10 @@ public class TextBox : MonoBehaviour
         {
             if (other.gameObject.tag == PLAYER_TAG)
             {
-                if (AudioSource.clip != null)
-                {
-                    AudioSource.Play();
-                }
-                
+                TextBoxManager.StopAllAudio();
+
+                AudioSource.Play();
+
                 firstAwake = true;
                 TextBoxManager.ActiveBox(textInBox, timeToHide);
             }

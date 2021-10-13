@@ -10,8 +10,11 @@ public class TextBoxManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textInBox;
     [SerializeField] private List<TextBox> texts;
 
+    [SerializeField] private TextBox endText;
+
     private void Awake()
     {
+        endText.gameObject.SetActive(false);
         foreach (var item in texts)
         {
             item.TextBoxManager = this;
@@ -19,14 +22,24 @@ public class TextBoxManager : MonoBehaviour
     }
     public void ActiveBox(string text, float timeToHide)
     {
-        foreach (var item in texts)
-        {
-            item.AudioSource.Stop();
-        }
+       
         textInBox.text = text;
         boxCanvas.SetActive(true);
         StopAllCoroutines();
         StartCoroutine(WaitForHideBox(timeToHide));
+    }
+
+    public void EndGameBox()
+    {
+        endText.gameObject.SetActive(true);
+    }
+
+    public void StopAllAudio()
+    {
+        foreach (var item in texts)
+        {
+            item.AudioSource.Stop();
+        }
     }
 
     IEnumerator WaitForHideBox(float time)
