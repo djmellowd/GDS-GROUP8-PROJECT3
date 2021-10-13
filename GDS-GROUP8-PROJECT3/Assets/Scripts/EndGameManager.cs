@@ -9,8 +9,6 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private GameObject hologram;
     [SerializeField] private AudioSource audioSource;
      private TextBoxManager textBoxManager;
-    [SerializeField] [TextArea(1, 5)] private string textHologram;
-    [SerializeField] private float timeToHide;
 
     private bool firstAwake=true;
 
@@ -26,7 +24,6 @@ public class EndGameManager : MonoBehaviour
             {
                 hologram.SetActive(true);
                 firstAwake = false;
-                textBoxManager.ActiveBox(textHologram, timeToHide);
                 audioSource.Play();
                 StartCoroutine(StartAttackPlayer(audioSource.clip.length));
             }
