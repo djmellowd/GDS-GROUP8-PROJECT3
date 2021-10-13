@@ -14,7 +14,11 @@ public class TextBoxManager : MonoBehaviour
 
     private void Awake()
     {
-        endText.gameObject.SetActive(false);
+        if (endText.gameObject != null)
+        {
+            endText.gameObject.SetActive(false);
+        }
+        
         foreach (var item in texts)
         {
             item.TextBoxManager = this;
