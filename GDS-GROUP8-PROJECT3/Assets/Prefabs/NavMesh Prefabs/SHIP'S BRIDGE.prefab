@@ -176,25 +176,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.1, z: 6}
   m_Center: {x: 0, y: -0.57, z: -1.8}
---- !u!95 &6015221087715883373
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861091533631456953}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b36e6c35f9d81964193f6d896da5d625, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &3229155308964509111
 Animator:
   serializedVersion: 3
@@ -214,6 +195,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &6015221087715883373
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861091533631456953}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b36e6c35f9d81964193f6d896da5d625, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &821326543551526023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +221,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1443363690960795464, guid: 0bd1556a85e754f6b9acd97f1903018a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.043121
+      objectReference: {fileID: 0}
     - target: {fileID: 2005576809314287450, guid: 0bd1556a85e754f6b9acd97f1903018a,
         type: 3}
       propertyPath: m_audioClip
@@ -305,6 +310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.0451231
+      objectReference: {fileID: 0}
+    - target: {fileID: 7997807689653874955, guid: 0bd1556a85e754f6b9acd97f1903018a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.0431213
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd1556a85e754f6b9acd97f1903018a, type: 3}
