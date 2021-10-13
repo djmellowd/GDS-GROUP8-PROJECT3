@@ -19,6 +19,7 @@ public class EndGameManager : MonoBehaviour
             {
                 hologram.SetActive(true);
                 firstAwake = false;
+                audioSource.Play();
               StartCoroutine(StartAttackPlayer(audioSource.clip.length));
             }
         }
