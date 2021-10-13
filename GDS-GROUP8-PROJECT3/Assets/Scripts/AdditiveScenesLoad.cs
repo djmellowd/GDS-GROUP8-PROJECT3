@@ -20,6 +20,7 @@ public class AdditiveScenesLoad : MonoBehaviour
         else
         {
             UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName[0], LoadSceneMode.Additive);
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName[1], LoadSceneMode.Additive);
         }
         
     }
