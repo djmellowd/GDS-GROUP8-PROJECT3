@@ -12,13 +12,17 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private float hologramTime;
     private TextBoxManager textBoxManager;
     private HudManager hudManager;
+    private GameContoller gameContoller;
 
     private bool firstAwake=true;
-
+    private GameObject player;
     private void Start()
     {
         hudManager = FindObjectOfType<HudManager>();
         textBoxManager = FindObjectOfType<TextBoxManager>();
+
+        gameContoller = FindObjectOfType<GameContoller>();
+        player = gameContoller.Player;
     }
     private void Update()
     {
@@ -38,6 +42,16 @@ public class EndGameManager : MonoBehaviour
         {
             hudManager.GoToMenu();
         }
+        LookAtPlayer();
+    }
+
+    private void LookAtPlayer()
+    {
+        var lookPos = player.transform.position - transform.position;
+        lookPos.x = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 650);
+
     }
 
     private IEnumerator StartAttackPlayer(float time)

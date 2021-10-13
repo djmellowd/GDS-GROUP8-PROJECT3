@@ -108,7 +108,10 @@ public class HudManager : MonoBehaviour
 
         if (_playerCurrentHp >= 50)
         {
-            damageIcons[0].SetActive(false);
+            foreach (var item in damageIcons)
+            {
+                item.SetActive(false);
+            }
         }
         else if (_playerCurrentHp <= 50 && _playerCurrentHp > 25)
         {
