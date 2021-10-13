@@ -30,6 +30,7 @@ public class MiniGun : MonoBehaviour
     private float timer;
 
     public bool StartAtack;
+    public bool IsDestory = false;
 
     void Awake()
     {
