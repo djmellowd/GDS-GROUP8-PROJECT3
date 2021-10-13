@@ -173,6 +173,8 @@ GameObject:
   - component: {fileID: 43992099}
   - component: {fileID: 43992098}
   - component: {fileID: 43992101}
+  - component: {fileID: 43992103}
+  - component: {fileID: 43992102}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -238,7 +240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43992097}
-  m_LocalRotation: {x: -0, y: 0.9982296, z: -0, w: 0.05947769}
+  m_LocalRotation: {x: 0, y: 0.9982296, z: 0, w: 0.05947769}
   m_LocalPosition: {x: 78.28, y: -3.69, z: -99.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -305,6 +307,48 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!95 &43992102
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43992097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &43992103
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43992097}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 15ad95b6f076743a0a02c815acace7fb, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -2749819431587840745, guid: 15ad95b6f076743a0a02c815acace7fb, type: 2}
+    value: {fileID: 43992102}
+  - key: {fileID: 7657801696005272024, guid: 15ad95b6f076743a0a02c815acace7fb, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7866495415764137472, guid: 15ad95b6f076743a0a02c815acace7fb, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &146927873
 PrefabInstance:
   m_ObjectHideFlags: 0
