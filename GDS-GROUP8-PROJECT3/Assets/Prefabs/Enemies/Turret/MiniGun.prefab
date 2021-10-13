@@ -40,9 +40,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5351439104537575814}
   - component: {fileID: 6737735146911031960}
+  - component: {fileID: 8229822725974968337}
+  - component: {fileID: 4027547309964830552}
   m_Layer: 12
   m_Name: MiniGun
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,9 +85,39 @@ MonoBehaviour:
   ammoPrefab: {fileID: 3439687148019248233, guid: 2098e3286f7a878419d8e247d719470a,
     type: 3}
   spawnPoint: {fileID: 276806489741261136}
-  shootingFrequency: 4
-  RangeToSeePlayer: 20
-  RedZone: 0
+  shootingFrequency: 1
+  StartAtack: 0
+--- !u!114 &8229822725974968337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900414492048190981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f61098c50242b47a1bf14d304ba3d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicData: {fileID: 11400000, guid: 623121295e007874dbb2f086ac748c9b, type: 2}
+  enemyBoom: {fileID: 1828176872806910, guid: d98ce6d80734c6e48a91481c156d8026, type: 3}
+  hudManager: {fileID: 0}
+  currentHealth: 0
+  MaxHealth: 0
+  audioSource: {fileID: 0}
+--- !u!65 &4027547309964830552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900414492048190981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.66, y: 0.6, z: 2.22}
+  m_Center: {x: 0, y: -0.88, z: 1.25}
 --- !u!1001 &2802754020470820737
 PrefabInstance:
   m_ObjectHideFlags: 0

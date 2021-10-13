@@ -79,17 +79,11 @@ public class MiniGun : MonoBehaviour
         if (timer >= shootingFrequency)
         {
             timer = RESET_TIMER;
-            for (int i = 0; i < ammoList.Count; i++)
-            {
-                if (!ammoList[i].activeInHierarchy)
-                {
-                    ammoList[i].transform.position = spawnPoint.position;
-                    ammoList[i].transform.rotation = gameObject.transform.localRotation;
-                    ammoList[i].SetActive(true);
-                    return;
-                }
-            }
-        }          
+            GameObject ammo = Instantiate(ammoPrefab);
+            ammo.transform.position = spawnPoint.position;
+            ammo.transform.rotation = gameObject.transform.localRotation;
+            return;
+        }       
     }
 
     private void LookAtPlayer()

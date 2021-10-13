@@ -101,7 +101,7 @@ public class ActiveConsole : MonoBehaviour
         else if (isOnConsole)
         {
             gameContoller.MiniGameCanvas[miniGameLvl].gameObject.SetActive(true);
-            if (Input.GetKeyDown(seriaObject.button))
+            if (Input.GetKeyDown(seriaObject.button) || Input.GetKeyDown(KeyCode.Escape))
             {
                 ActiveGame();
             }
