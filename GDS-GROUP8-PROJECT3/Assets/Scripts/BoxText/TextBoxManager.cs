@@ -14,11 +14,7 @@ public class TextBoxManager : MonoBehaviour
 
     private void Awake()
     {
-        if (endText.gameObject != null)
-        {
-            endText.gameObject.SetActive(false);
-        }
-        
+        endText.gameObject.SetActive(false);
         foreach (var item in texts)
         {
             item.TextBoxManager = this;
@@ -26,7 +22,7 @@ public class TextBoxManager : MonoBehaviour
     }
     public void ActiveBox(string text, float timeToHide)
     {
-        if (textInBox != null)
+        if (textInBox !=null)
         {
             textInBox.text = text;
         }
