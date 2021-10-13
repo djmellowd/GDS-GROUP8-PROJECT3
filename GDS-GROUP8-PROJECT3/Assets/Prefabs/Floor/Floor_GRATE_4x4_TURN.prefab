@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5207419959880693248}
-  - component: {fileID: 8463181600359606336}
   m_Layer: 0
   m_Name: Floor_GRATE_4x4_TURN
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8463181600359606336
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4832266130930789562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7086707947899341249
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +42,7 @@ GameObject:
   - component: {fileID: 2230402679062696642}
   - component: {fileID: 2642027288773379440}
   - component: {fileID: 6864734068507398537}
+  - component: {fileID: 2071015749565627401}
   m_Layer: 0
   m_Name: Floor_GRATE_4x4_TURN
   m_TagString: Untagged
@@ -124,3 +111,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2071015749565627401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086707947899341249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0034494, y: 0.37643084, z: 4}
+  m_Center: {x: -1.9982753, y: -0.1752892, z: -2}
