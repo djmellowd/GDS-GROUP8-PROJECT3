@@ -9,11 +9,13 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private GameObject hologram;
     [SerializeField] private AudioSource audioSource;
      private TextBoxManager textBoxManager;
+    private HudManager hudManager;
 
     private bool firstAwake=true;
 
     private void Start()
     {
+        hudManager = FindObjectOfType<HudManager>();
         textBoxManager = FindObjectOfType<TextBoxManager>();
     }
     private void Update()
@@ -28,7 +30,10 @@ public class EndGameManager : MonoBehaviour
                 StartCoroutine(StartAttackPlayer(audioSource.clip.length));
             }
         }
-        
+        if (miniGuns[0].IsDestory && miniGuns[1].IsDestory)
+        {
+            hudManager.GoToMenu();
+        }
     }
 
     private IEnumerator StartAttackPlayer(float time)

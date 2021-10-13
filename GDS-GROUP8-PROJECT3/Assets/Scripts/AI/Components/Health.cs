@@ -9,6 +9,7 @@ namespace BehaviorDesigner.Runtime.Tactical
     {
         [SerializeField] private BasicData basicData;
         [SerializeField] private GameObject enemyBoom;
+        [SerializeField] private bool isMiniGun = false;
         // The amount of health to begin with
         [Header("!Only For Player!")]
         [SerializeField] private HudManager hudManager;
@@ -50,6 +51,10 @@ namespace BehaviorDesigner.Runtime.Tactical
                 if (hudManager != null)
                 {
                     hudManager.UnlockMouse();
+                }
+                if (isMiniGun)
+                {
+                    GetComponent<MiniGun>().IsDestory = true;
                 }
                     gameObject.SetActive(false);
             }
