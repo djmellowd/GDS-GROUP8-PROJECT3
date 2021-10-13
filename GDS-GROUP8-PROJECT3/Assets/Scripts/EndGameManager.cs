@@ -8,7 +8,9 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private List<MiniGun> miniGuns;
     [SerializeField] private GameObject hologram;
     [SerializeField] private AudioSource audioSource;
-     private TextBoxManager textBoxManager;
+    [SerializeField][TextArea(2,6)] private string hologramText;
+    [SerializeField] private float hologramTime;
+    private TextBoxManager textBoxManager;
     private HudManager hudManager;
 
     private bool firstAwake=true;
@@ -25,6 +27,8 @@ public class EndGameManager : MonoBehaviour
             if (IsAllMissionComplete())
             {
                 hologram.SetActive(true);
+                textBoxManager.ActiveBox(hologramText, hologramTime);
+
                 firstAwake = false;
                 audioSource.Play();
                 StartCoroutine(StartAttackPlayer(audioSource.clip.length));
