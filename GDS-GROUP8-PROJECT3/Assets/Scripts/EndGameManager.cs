@@ -8,9 +8,14 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private List<MiniGun> miniGuns;
     [SerializeField] private GameObject hologram;
     [SerializeField] private AudioSource audioSource;
+     private TextBoxManager textBoxManager;
 
     private bool firstAwake=true;
 
+    private void Start()
+    {
+        textBoxManager = FindObjectOfType<TextBoxManager>();
+    }
     private void Update()
     {
         if (firstAwake)
@@ -20,7 +25,7 @@ public class EndGameManager : MonoBehaviour
                 hologram.SetActive(true);
                 firstAwake = false;
                 audioSource.Play();
-              StartCoroutine(StartAttackPlayer(audioSource.clip.length));
+                StartCoroutine(StartAttackPlayer(audioSource.clip.length));
             }
         }
         
@@ -47,6 +52,7 @@ public class EndGameManager : MonoBehaviour
 
     private void StartAttack()
     {
+        textBoxManager.EndGameBox();
         foreach (var item in miniGuns)
         {
             item.StartAtack = true;
