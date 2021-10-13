@@ -14,6 +14,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         [SerializeField] private HudManager hudManager;
         [HideInInspector]public float currentHealth;
         [HideInInspector] public float MaxHealth;
+        [SerializeField] private AudioSource audioSource;
 
 
         /// <summary>
@@ -43,6 +44,7 @@ namespace BehaviorDesigner.Runtime.Tactical
                 if (enemyBoom !=null)
                 {
                     GameObject boom = Instantiate(enemyBoom, transform.position, transform.rotation);
+
                     Destroy(boom,2);
                 }
                 if (hudManager != null)
