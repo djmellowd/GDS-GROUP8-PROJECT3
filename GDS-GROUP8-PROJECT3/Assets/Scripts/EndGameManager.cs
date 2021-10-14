@@ -48,9 +48,9 @@ public class EndGameManager : MonoBehaviour
     private void LookAtPlayer()
     {
         var lookPos = player.transform.position - transform.position;
-        lookPos.x = 0;
+        lookPos.x = hologram.transform.localPosition.x;
         var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 650);
+        hologram.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 650);
 
     }
 

@@ -13,7 +13,7 @@ public class ActiveConsole : MonoBehaviour
     [SerializeField] private float speed;
     private GameContoller gameContoller;
 
-
+    private bool firstTry;
     private Camera playerCam;
     private Transform startPosCamera = null;
     private bool isOnConsole=false;
@@ -60,6 +60,7 @@ public class ActiveConsole : MonoBehaviour
         gameContoller.Player.SetActive(false);
         gameContoller.PlayerGun.SetActive(false);
     }
+
     private void ActiveGame()
     {
         isOnConsole = false;
@@ -77,7 +78,7 @@ public class ActiveConsole : MonoBehaviour
     {
         if (gameContoller.MiniGameControler[miniGameLvl].UnlockWin)
         {
-            if (miniGameLvl == 3) // First MiniGame
+            if (miniGameLvl == 4) // First MiniGame
             {
                 firstDoor.FirstDoor = false;
             }
@@ -97,14 +98,27 @@ public class ActiveConsole : MonoBehaviour
             playerCam.transform.parent = cameraPoint;
             playerCam.transform.position = Vector3.Lerp(playerCam.transform.position, cameraPoint.position, speed * Time.deltaTime);
             playerCam.transform.rotation = Quaternion.Lerp(playerCam.transform.rotation, cameraPoint.rotation, speed * Time.deltaTime);
+            if (!firstTry)
+            {
+                StartCoroutine(ForceMenu());
+            }
         }
+            
         else if (isOnConsole)
         {
+            StopAllCoroutines();
             gameContoller.MiniGameCanvas[miniGameLvl].gameObject.SetActive(true);
             if (Input.GetKeyDown(seriaObject.button) || Input.GetKeyDown(KeyCode.Escape))
             {
                 ActiveGame();
             }
         }
+    }
+    IEnumerator ForceMenu()
+    {
+        firstTry = true;
+        yield return new WaitForSeconds(3);
+        playerCam.transform.position = cameraPoint.position;
+        playerCam.transform.rotation = cameraPoint.rotation;
     }
 }
