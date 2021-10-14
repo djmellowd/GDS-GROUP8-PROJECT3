@@ -78,6 +78,12 @@ public class HudManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
     }
+
+    public void GoToEnd()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("FinalScene");
+    }
+
     public void StartMainGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
