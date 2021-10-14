@@ -36,7 +36,7 @@ public class EndGameManager : MonoBehaviour
         }
         if (miniGuns[0].IsDestory && miniGuns[1].IsDestory)
         {
-            hudManager.GoToMenu();
+            hudManager.GoToEnd();
         }
     }
 

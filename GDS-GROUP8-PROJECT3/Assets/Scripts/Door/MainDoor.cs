@@ -26,11 +26,18 @@ public class MainDoor : MonoBehaviour
 
     private void Update()
     {
-        if (gameContoller.MiniGameControler[0].UnlockWin && gameContoller.MiniGameControler[1] && gameContoller.MiniGameControler[2])
+        if (CheckMainDoorOpen())
         {
             OpenDoor();
         }
     }
+
+    private bool CheckMainDoorOpen()
+    {
+        return gameContoller.MiniGameControler[0].UnlockWin && gameContoller.MiniGameControler[1].UnlockWin &&
+            gameContoller.MiniGameControler[2].UnlockWin && gameContoller.MiniGameControler[3].UnlockWin;
+    }
+
     private void OpenDoor()
     {
         leftPart.position = Vector3.MoveTowards(leftPart.position, _leftDir, speed * Time.deltaTime);
