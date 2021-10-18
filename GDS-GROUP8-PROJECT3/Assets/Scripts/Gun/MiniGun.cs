@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using BehaviorDesigner.Runtime.Tactical;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class MiniGun : MonoBehaviour
     [Header("Barrel")]
     [SerializeField] private GameObject barrel;
     [SerializeField] private int rottateBarrelSpeed = 650;
+    [SerializeField] private Health health;
 
     [Header("Shoot")]
     [SerializeField] private GameObject ammoPrefab;
@@ -31,6 +33,7 @@ public class MiniGun : MonoBehaviour
 
     public bool StartAtack;
     public bool IsDestory = false;
+    private bool firstAwake;
 
     void Awake()
     {
@@ -55,7 +58,13 @@ public class MiniGun : MonoBehaviour
             Patrol();
         }
         else
-        {          
+        {
+            if (!firstAwake)
+            {
+                health.enabled = true;
+                firstAwake = true;
+            }
+
             Shoot();
         }      
     }

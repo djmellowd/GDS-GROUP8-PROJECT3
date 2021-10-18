@@ -10,6 +10,7 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField][TextArea(2,6)] private string hologramText;
     [SerializeField] private float hologramTime;
+    [SerializeField] private bool activeHologramTest;
     private TextBoxManager textBoxManager;
     private HudManager hudManager;
     private GameContoller gameContoller;
@@ -28,7 +29,7 @@ public class EndGameManager : MonoBehaviour
     {
         if (firstAwake)
         {
-            if (IsAllMissionComplete())
+            if (IsAllMissionComplete() || activeHologramTest)
             {
                 hologram.SetActive(true);
                 textBoxManager.ActiveBox(hologramText, hologramTime);
@@ -48,7 +49,7 @@ public class EndGameManager : MonoBehaviour
     private void LookAtPlayer()
     {
         var lookPos = player.transform.position - transform.position;
-        lookPos.x = hologram.transform.localPosition.x;
+        lookPos.x = 0;
         var rotation = Quaternion.LookRotation(lookPos);
         hologram.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 650);
 
@@ -78,6 +79,7 @@ public class EndGameManager : MonoBehaviour
         textBoxManager.EndGameBox();
         foreach (var item in miniGuns)
         {
+            item.gameObject.SetActive(true);
             item.StartAtack = true;
         }
     }
