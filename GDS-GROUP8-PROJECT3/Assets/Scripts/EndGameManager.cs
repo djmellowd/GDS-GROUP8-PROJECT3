@@ -79,6 +79,7 @@ public class EndGameManager : MonoBehaviour
         textBoxManager.EndGameBox();
         foreach (var item in miniGuns)
         {
+            item.gameObject.SetActive(true);
             item.StartAtack = true;
         }
     }
