@@ -89,6 +89,11 @@ public class HudManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(_mainMenuText);
     }
 
+    public void ShowEndGame()
+    {
+        ActiveIcon(2);
+    }
+
     public void ChangeColorCrosshair()
     {
      StartCoroutine(ChangeColor());
