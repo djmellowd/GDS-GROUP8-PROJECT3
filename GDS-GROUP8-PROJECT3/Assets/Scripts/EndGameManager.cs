@@ -32,8 +32,10 @@ public class EndGameManager : MonoBehaviour
             if (IsAllMissionComplete() || activeHologramTest)
             {
                 hologram.SetActive(true);
+                LookAtPlayer();
                 textBoxManager.ActiveBox(hologramText, hologramTime);
 
+                LookAtPlayer();
                 firstAwake = false;
                 audioSource.Play();
                 StartCoroutine(StartAttackPlayer(audioSource.clip.length));
@@ -43,7 +45,7 @@ public class EndGameManager : MonoBehaviour
         {
             hudManager.GoToEnd();
         }
-        LookAtPlayer();
+
     }
 
     private void LookAtPlayer()

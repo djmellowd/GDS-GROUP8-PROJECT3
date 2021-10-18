@@ -9,7 +9,7 @@ public class ActiveConsole : MonoBehaviour
     [SerializeField] private int miniGameLvl;
     [SerializeField] private AutomaticDoor firstDoor;
     [SerializeField] private List<Material> cablesMaterials;
-
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private float speed;
     private GameContoller gameContoller;
 
@@ -26,6 +26,7 @@ public class ActiveConsole : MonoBehaviour
     private void IniinitializationParameters()
     {
         gameContoller = FindObjectOfType<GameContoller>();
+        audioManager = FindObjectOfType<AudioManager>();
         playerCam = gameContoller.MainCamera;
         if (miniGameLvl!=0)
         {
@@ -55,6 +56,7 @@ public class ActiveConsole : MonoBehaviour
     private void DisActiveGame()
     {
         isOnConsole = true;
+        audioManager.Stop("footstepMetal");
 
         gameContoller.MainCanvas.gameObject.SetActive(false);
         gameContoller.Player.SetActive(false);
