@@ -35,11 +35,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         {
             currentHealth = Mathf.Max(currentHealth - amount, 0);
 
-            if (hudManager != null)
-            {
-                hudManager.RefreshHpPlayer(amount, false);
-            }
-
+            
             if (currentHealth == 0) 
             {
                 if (enemyBoom !=null)
@@ -51,6 +47,7 @@ namespace BehaviorDesigner.Runtime.Tactical
                 if (hudManager != null)
                 {
                     hudManager.UnlockMouse();
+                    hudManager.ShowEndGame();
                 }
                 if (isMiniGun)
                 {
@@ -58,6 +55,12 @@ namespace BehaviorDesigner.Runtime.Tactical
                 }
                     gameObject.SetActive(false);
             }
+
+            if (hudManager != null)
+            {
+                hudManager.RefreshHpPlayer(amount, false);
+            }
+
         }
 
         // Is the object alive?
